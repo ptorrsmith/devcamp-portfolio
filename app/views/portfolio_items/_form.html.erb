@@ -1,0 +1,42 @@
+<%= form_with(model: portfolio_item, local: true) do |form| %>
+  <% if portfolio_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(portfolio_item.errors.count, "error") %> prohibited this portfolio_item from being saved:</h2>
+
+      <ul>
+      <% portfolio_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtitle %>
+    <%= form.text_field :subtitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :main_image %>
+    <%= form.text_field :main_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail_image %>
+    <%= form.text_field :thumbnail_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

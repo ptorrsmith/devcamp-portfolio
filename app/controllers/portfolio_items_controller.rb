@@ -23,6 +23,26 @@ class PortfolioItemsController < ApplicationController
           end
     end
 
+    def show
+
+    end
+
+    def edit
+    
+    end
+
+    def update
+        respond_to do |format|
+            if @portfolio_item.update(portfolio_item_params)
+                format.html { redirect_to portfolio_items_path, notice: 'Portfolio Item was updated gud buddy!' }
+            #   format.json { render :show, status: :created, location: @portfolio_item }
+            else
+              format.html { render :new }
+            #   format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
+            end
+          end
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_portfolio_item

@@ -23,6 +23,7 @@ puts "10 test blog posts created"
     )
 end
 
+puts "5 test skills created"
 
 9.times do |i| 
     PortfolioItem.create!(
@@ -34,3 +35,5 @@ end
 
     )
 end 
+
+puts "9 test portfolio_items created"

@@ -5,6 +5,14 @@ class PortfolioItemsController < ApplicationController
     def index
         @portfolio_items = PortfolioItem.all
     end
+    
+    def ruby_on_rails_portfolio_items
+        @rails_portfolio_items = PortfolioItem.ruby_on_rails_portfolio_items       
+    end
+    
+    def javascript_portfolio_items
+        @javascript_portfolio_items = PortfolioItem.javascript
+    end
 
     def new
         @portfolio_item = PortfolioItem.new

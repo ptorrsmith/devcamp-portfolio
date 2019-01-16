@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :portfolio_items, except: [:show]
+  get 'javascript_items', to: 'portfolio_items#javascript_portfolio_items'
   get 'portfolio_item/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'
 
   # get 'pages/home'

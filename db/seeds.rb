@@ -40,6 +40,8 @@ puts "5 test skills created"
     )
 end 
 
+puts "8 Portfolio Items (Rails) created"
+
 PortfolioItem.create!(
     title: "Portfolio Item number #1",
     subtitle: "Javascript",
@@ -48,4 +50,21 @@ PortfolioItem.create!(
     thumb_image: 'http://placehold.it/350x200'
 )
 
-puts "9 test portfolio_items created"
+puts "1 Portfolio Items (Javascript) created"
+
+
+# 3.times do |i|
+#     Technology.create!(
+#         name: "Technology ##{i}",
+#         portfolio_item_id: PortfolioItem.last.id
+#     )
+# end
+
+3.times do |i|
+    PortfolioItem.last.technologies.create!(
+        name: "Technology ##{i}"
+    )
+end
+
+
+puts "3 technologies created"

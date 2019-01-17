@@ -16,10 +16,12 @@ class PortfolioItemsController < ApplicationController
 
     def new
         @portfolio_item = PortfolioItem.new
+        3.times { @portfolio_item.technologies.build }
     end
 
     def create
         @portfolio_item = PortfolioItem.new(portfolio_item_params)
+        # @portfolio_item = PortfolioItem.new(params.require(:portfolio_item).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name]))
         respond_to do |format|
             if @portfolio_item.save
               format.html { redirect_to portfolio_items_path, notice: 'Portfolio Item was made gud mate!' }
@@ -68,6 +70,9 @@ class PortfolioItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_item_params
-      params.require(:portfolio_item).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+        # this is called Strong Params
+        # params.require(:portfolio_item).permit(:title, :subtitle, :body, technologies_attributes: [:name], :main_image, :thumb_image)
+        # NOTE: nested attributes expected at end of params list, not middle (as above which fails)
+        params.require(:portfolio_item).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
     end
 end

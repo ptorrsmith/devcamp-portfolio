@@ -17,12 +17,13 @@
 
     <%= login_helper %>
 
-
-
-    <%= yield %>
+    <hr />
 
     <%= render 'shared/nav', location: 'bottom' %>
+    
+    <%= source_helper 'blogs' %>
+    
+    <%= yield %>
 
-    <hr />
     </body>
 </html>

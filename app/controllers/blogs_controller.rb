@@ -1,20 +1,25 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
+
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @page_title = 'Blogs!'
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @page_title = @blog.title
+    @seo_keywords = @blog.body  # not good content. create a keywords field on the blog model.
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @page_title = 'new blog'
   end
 
   # GET /blogs/1/edit

@@ -73,6 +73,13 @@ class PortfolioItemsController < ApplicationController
         # this is called Strong Params
         # params.require(:portfolio_item).permit(:title, :subtitle, :body, technologies_attributes: [:name], :main_image, :thumb_image)
         # NOTE: nested attributes expected at end of params list, not middle (as above which fails)
-        params.require(:portfolio_item).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
+        params.require(:portfolio_item).permit(
+            :title, 
+            :subtitle, 
+            :body, 
+            :main_image, 
+            :thumb_image, 
+            technologies_attributes: [:name]
+            )
     end
 end

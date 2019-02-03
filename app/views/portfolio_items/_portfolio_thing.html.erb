@@ -1,0 +1,6 @@
+    <h2><%=link_to portfolio_thing.title, portfolio_item_show_path(portfolio_thing)%></h2>
+    <h4><%=portfolio_thing.subtitle%></h4>
+    <p><%=portfolio_thing.body%></p>
+    <p><%=image_tag portfolio_thing.thumb_image unless portfolio_thing.thumb_image.nil?%></p>
+    <p><%= link_to "Edit", edit_portfolio_item_path(portfolio_thing.id) %></p>
+    <p><%= link_to "Delete (destroy)", portfolio_item_path(portfolio_thing), method: :delete, data: { confirm: 'sure you wanna blow this away?'} %></p>

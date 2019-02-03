@@ -1,12 +1,16 @@
 <h1>Home Page</h1>
 <h2>Hi <%= current_user.first_names if current_user %></h2>
 
+<p> Current user class is <%=current_user.class %> </p>
 
+<hr />
 <h2>Blogs</h2>
 <%=@blogs.inspect%>
 
 
 <h2>Skills</h2>
 <%=@skills.inspect%>
+
+
 
 

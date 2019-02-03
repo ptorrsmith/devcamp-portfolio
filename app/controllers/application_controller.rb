@@ -14,5 +14,13 @@ class ApplicationController < ActionController::Base
 
     include DeviseWhitelist
 
+    before_action :set_source
+
+    
+    # capture source if linked from other site
+    def set_source
+        session[:source] = params[:q] if params[:q]    
+    end
+
 
 end

@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
+    
 
+    # move thigns to module conern
+    # so modules have single responsibility
+    include DeviseWhitelist
+    include SetSource
+    
     # noticed protect_from_forgery appears to be in Base, so no longer declared here
 
     # Moved to application concern module devise_whitelist.rb
@@ -12,15 +18,15 @@ class ApplicationController < ActionController::Base
     #     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     # end
 
-    include DeviseWhitelist
-
-    before_action :set_source
+    # moved to application concern moule SetSource
+    # # do before every 
+    # before_action :set_source
 
     
-    # capture source if linked from other site
-    def set_source
-        session[:source] = params[:q] if params[:q]    
-    end
+    # # capture source if linked from other site
+    # def set_source
+    #     session[:source] = params[:q] if params[:q]    
+    # end
 
 
 end

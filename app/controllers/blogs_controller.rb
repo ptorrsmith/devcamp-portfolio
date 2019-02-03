@@ -1,6 +1,8 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-
+  # layout 'blog'  # only needed if layout file different from controller/route
+  # i.e. the layout file is blogs.html.erb in layouts folder, so automatically used
+  # but if named blog.html.erb, would need the layout 'blog' declaration above
 
   # GET /blogs
   # GET /blogs.json

@@ -1,5 +1,6 @@
 class PortfolioItemsController < ApplicationController
 
+    # before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
     before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
     # layout
 
@@ -36,7 +37,7 @@ class PortfolioItemsController < ApplicationController
     end
 
     def show
-
+# binding.pry
     end
 
     def edit

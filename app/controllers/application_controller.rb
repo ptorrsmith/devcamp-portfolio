@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     include SetSource
     include CurrentUserConcern
     include DefaultPageContentConcern
-
+# byebug
 
        
     # noticed protect_from_forgery appears to be in Base, so no longer declared here

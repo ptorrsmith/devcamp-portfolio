@@ -1,8 +1,20 @@
 class PortfolioItemsController < ApplicationController
 
+    
     # before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
     before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
-    # layout
+    # layout 'portfolio_items' # why different ? not needed anymore in rails 5.1/5.2 ?
+
+    # don't seem to need all yet as anon is a GuestUser so is covered by user: Not ideal
+    access user: {except: [:destroy, :new, :create, :update, :edit, ]}, site_admin: :all
+    #  Why can anon / user see :javascript_items if left off all?
+    # access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, ]}, site_admin: :all
+    # access all: [:show, :index, :javascript_portfolio_items], user: {except: [:destroy, :new, :create, :update, :edit, ]}, site_admin: :all
+    # examples:
+    # access all: [:show, :index], user: {except: [:destroy]}, company_admin: :all
+    # # one other option that might seem a bit weird is to put a group of roles in an array:
+    # access [:all, :user] => [:show, :index]
+  
 
     def index
         @portfolio_items = PortfolioItem.all

@@ -4,6 +4,12 @@ class BlogsController < ApplicationController
   # i.e. the layout file is blogs.html.erb in layouts folder, so automatically used
   # but if named blog.html.erb, would need the layout 'blog' declaration above
 
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, ]}, site_admin: :all
+  # examples:
+  # access all: [:show, :index], user: {except: [:destroy]}, company_admin: :all
+  # # one other option that might seem a bit weird is to put a group of roles in an array:
+  # access [:all, :user] => [:show, :index]
+
   # GET /blogs
   # GET /blogs.json
   def index

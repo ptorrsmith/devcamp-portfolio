@@ -12,8 +12,8 @@
     <% end %>
     <hr />
 
-<%= link_to 'Edit', edit_portfolio_item_path(@portfolio_item) %> |
-<%= link_to 'Destroy', portfolio_item_path(@portfolio_item), method: :delete, data: {confirm: "Blow away blog # #{@portfolio_item.id}?"} %> |
+<%= link_to 'Edit', edit_portfolio_item_path(@portfolio_item) if logged_in?(:site_admin) %> |
+<%= link_to 'Destroy', portfolio_item_path(@portfolio_item), method: :delete, data: {confirm: "Blow away blog # #{@portfolio_item.id}?"} if logged_in?(:site_admin) %> |
 <%= link_to 'Back', portfolio_items_path %>
 
 

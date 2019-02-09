@@ -32,4 +32,5 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+<%#= link_to "destroy", destroy_listing_path(listing) if logged_in?(:admin, :customer, :etc) %>

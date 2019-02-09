@@ -4,7 +4,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to "Create new Portfolio Item", new_portfolio_item_path %>
+<%= link_to "Create new Portfolio Item", new_portfolio_item_path if logged_in?(:site_admin) %>
 
 <% # partials with manual / override collections %>
 <%= render partial: 'portfolio_thing', collection: @portfolio_items %>

@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// Added by PTS as per bootstrap-rubygems docs. Note jquery3 not jquery
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+//= require bootstrap
+

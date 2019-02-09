@@ -42,6 +42,25 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+
+# GEMS installed by PTS during build course
+gem 'friendly_id', '~> 5.2.4'
+
+gem 'devise', '~> 4.5'
+
+# required for bootstrap gem
+# but already installed via rails gem dependency (see Gemfile.lock)
+# gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
+
+# as per bootstrap-rubygem docs, different from Udemy video
+gem 'jquery-rails'
+
+gem 'bootstrap', '~> 4.2.1'
+
+# normally don't publish all gems to rebygems.org unless want to share
+# 
+gem 'pts_devcamp_view_tool', git: 'https://github.com/ptorrsmith/pts_devcamp_view_tool'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -62,6 +81,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'friendly_id', '~> 5.2.4'
-
-gem 'devise', '~> 4.5'

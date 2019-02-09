@@ -16,7 +16,7 @@ module ApplicationHelper
             if current_user.is_a?(GuestUser)
                 (link_to "Register", new_user_registration_path) + '<br />'.html_safe + (link_to "Log in", new_user_session_path)
             else
-                link_to "Log out #{current_user.inspect || 'nada' + current_user.is_a?(User).to_s}", destroy_user_session_path, method: :delete
+                link_to "Log out", destroy_user_session_path, method: :delete
             end
         else
             (link_to "Register", new_user_registration_path) + '<br />'.html_safe + (link_to "Log in", new_user_session_path)

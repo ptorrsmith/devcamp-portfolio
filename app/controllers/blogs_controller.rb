@@ -7,8 +7,19 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    # @blogs = Blog.limit 2
+    # binding.pry
+    @blogs = Blog.special_blogs
+    # binding.pry
+    # @blogs = Blog.featured_blogs # for debugging with pry demo ()
+    # binding.pry
+    # byebug
+    # puts "*" * 100
+    # puts @blogs.inspect
+    # puts "/" * 100
     @page_title = 'Blogs!'
+    # binding.pry
   end
 
   # GET /blogs/1

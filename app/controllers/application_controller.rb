@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
     include SetSource
     include CurrentUserConcern
     include DefaultPageContentConcern
+
+    before_action :set_copyright
+
+    def set_copyright
+        @copyright = DevCampViewTool::Renderer.copyright 'Peter Torr Smith', 'Have a great day :-)'
+    end
+
 # byebug
 
        
@@ -39,5 +46,14 @@ class ApplicationController < ActionController::Base
     #     super || OpenStruct.new(name: "Guest visitor", first_names: "Guesty", last_name: "visitori", email: "x@y.z")
     # end
 
+end
+
+module DevCampViewTool
+    class Renderer
+        def self.copyright name, msg
+            "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
+        end
+    end
 
 end
+

@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%# TODO viewport meta name initial-scale etc %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--TODO <link rel="icon" href="../../../../favicon.ico"> -->
+   
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# <!-- Custom styles for this template -->
+      <link href="cover.css" rel="stylesheet">
+   %>
+  
   </head>
 
   <body>

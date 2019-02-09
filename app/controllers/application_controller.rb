@@ -8,11 +8,13 @@ class ApplicationController < ActionController::Base
     include CurrentUserConcern
     include DefaultPageContentConcern
 
-    before_action :set_copyright
+    
+    # move to application helper once built gem and tested
+    # before_action :set_copyright
 
-    def set_copyright
-        @copyright = DevCampViewTool::Renderer.copyright 'Peter Torr Smith', 'Have a great day :-)'
-    end
+    # def set_copyright
+    #     @copyright = PtsDevcampViewTool::Renderer.copyright 'Peter Torr Smith', 'Have a great day :-)'
+    # end
 
 # byebug
 
@@ -48,12 +50,13 @@ class ApplicationController < ActionController::Base
 
 end
 
-module DevCampViewTool
-    class Renderer
-        def self.copyright name, msg
-            "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
-        end
-    end
+# replaced by self-built gem PtsDevampViewTool 
+# module DevCampViewTool
+#     class Renderer
+#         def self.copyright name, msg
+#             "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
+#         end
+#     end
 
-end
+# end
 

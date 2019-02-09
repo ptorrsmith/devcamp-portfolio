@@ -24,4 +24,8 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end
     end 
+
+    def copyright_generator
+        PtsDevcampViewTool::Renderer.copyright 'Peter Torr Smith', 'Have a great day :-)'
+    end
 end

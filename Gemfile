@@ -52,9 +52,14 @@ gem 'devise', '~> 4.5'
 # but already installed via rails gem dependency (see Gemfile.lock)
 # gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 
+# as per bootstrap-rubygem docs, different from Udemy video
 gem 'jquery-rails'
+
 gem 'bootstrap', '~> 4.2.1'
 
+# normally don't publish all gems to rebygems.org unless want to share
+# 
+gem 'pts_devcamp_view_tool', git: 'https://github.com/ptorrsmith/pts_devcamp_view_tool'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -12,14 +12,10 @@ module ApplicationHelper
 
     def login_helper
         # this is a temp hack as GuestUser inherits from User
-        if current_user.is_a?(User)
-            if current_user.is_a?(GuestUser)
-                (link_to "Register", new_user_registration_path) + '<br />'.html_safe + (link_to "Log in", new_user_session_path)
-            else
-                link_to "Log out", destroy_user_session_path, method: :delete
-            end
-        else
+        if current_user.is_a?(GuestUser)
             (link_to "Register", new_user_registration_path) + '<br />'.html_safe + (link_to "Log in", new_user_session_path)
+        else
+            link_to "Log out", destroy_user_session_path, method: :delete
         end
     end
 

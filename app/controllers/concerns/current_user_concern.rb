@@ -6,12 +6,27 @@ module CurrentUserConcern # must match filename CapCasing > cap_casing.rb
         super || guest_user
     end
 
+    # As it was before petergate and crating GuestUser class inheriting from User (which includes petergate)
+
+    # def guest_user
+    #     OpenStruct.new(
+    #         name: "Guest visitor",
+    #         first_names: "Guesty",
+    #         last_name: "visitori",
+    #         email: "x@y.z"
+    #         )
+    # end
+
     def guest_user
-        OpenStruct.new(
-            name: "Guest visitor",
-            first_names: "Guesty",
-            last_name: "visitori",
-            email: "x@y.z"
-            )
+        guest = GuestUser.new
+        guest.name = "Guest User"
+        guest.first_name = "Guest"
+        guest.last_name = "User"
+        guest.email = "guest@ptorrsmith.com"
+        
+        # return guest
+        guest
     end
+
+
 end

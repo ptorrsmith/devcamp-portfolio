@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%# TODO viewport meta name initial-scale etc %>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--TODO <link rel="icon" href="../../../../favicon.ico"> -->
-   
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <meta name="keywords" content="<%= @seo_keywords %>" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--TODO <link rel="icon" href="../../../../favicon.ico"> -->
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%# <!-- Custom styles for this template -->
-      <link href="cover.css" rel="stylesheet">
+  <title>
+    <%= @page_title %>
+  </title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <meta name="keywords" content="<%= @seo_keywords %>" />
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# <!-- TODO Custom styles for this template -->
+      <!-- <link href="cover.css" rel="stylesheet"> -->
    %>
-  
-  </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+</head>
 
-    <%= render 'shared/nav', location: 'top' %>
+<body class="text-center">
+  <!-- <div class="site-wrapper">
+    <div class="site-wraper-inner"> -->
 
-    <hr />
-    
+
+  <!-- <p class="notice">
+            <%#= notice %>
+          </p>
+          <p class="alert">
+            <%#= alert %>
+          </p> -->
+
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+    <%= render 'shared/application_nav'%>
+
+    <!-- <hr /> -->
+
     <%= login_helper %>
-    
-    <%= source_helper %>
-    
+
+
     <%= yield %>
     <%#= @copyright %>
     <%= copyright_generator %>
-    </body>
+    <%= source_helper %>
+  </div>
+  <!-- </div>
+  </div> -->
+
+</body>
+
 </html>

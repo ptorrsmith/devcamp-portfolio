@@ -10,7 +10,7 @@ module ApplicationHelper
         content_tag :div, "my content", class: "my-class"
     end
 
-    def login_helper style
+    def login_helper style = ''
         # this is a temp hack as GuestUser inherits from User
         if current_user.is_a?(GuestUser)
             (link_to "Register", new_user_registration_path, class: style) + 

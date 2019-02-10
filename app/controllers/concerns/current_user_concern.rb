@@ -19,8 +19,8 @@ module CurrentUserConcern # must match filename CapCasing > cap_casing.rb
 
     def guest_user
         guest = GuestUser.new
-        guest.name = "Guest User"
-        guest.first_name = "Guest"
+        guest.name = "friend"
+        guest.first_name = "Visitor"
         guest.last_name = "User"
         guest.email = "guest@ptorrsmith.com"
         

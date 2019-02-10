@@ -1,5 +1,8 @@
-<div class="col-sm-8 blog-main">
+<!-- <p id="notice">
+  <%= notice %>
+</p> -->
 
+<div class="col-sm-8 blog-main">
 
   <% # partials with conventional collections %>
   <%= render @blogs %>
@@ -8,13 +11,4 @@
     <a class="btn btn-outline-primary" href="#">Older</a>
     <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
   </nav>
-
 </div><!-- /.blog-main -->
-
-
-<p id="notice">
-  <%= notice %>
-</p>
-
-<!-- <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
-<%#= link_to "destroy", destroy_listing_path(listing) if logged_in?(:admin, :customer, :etc) %> -->

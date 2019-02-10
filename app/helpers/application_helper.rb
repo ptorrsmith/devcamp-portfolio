@@ -10,15 +10,19 @@ module ApplicationHelper
         content_tag :div, "my content", class: "my-class"
     end
 
-    def login_helper
+    def login_helper style
         # this is a temp hack as GuestUser inherits from User
         if current_user.is_a?(GuestUser)
-            (link_to "Register", new_user_registration_path) + '<br />'.html_safe + (link_to "Log in", new_user_session_path)
+            (link_to "Register", new_user_registration_path, class: style) + 
+            ''.html_safe + 
+            (link_to "Log in", new_user_session_path, class: style)
         else
-            link_to "Log out", destroy_user_session_path, method: :delete
+            link_to "Log out", destroy_user_session_path, method: :delete, class: style
         end
     end
 
+
+    # TODO Layout name???
     def source_helper(layout_name = 'application')
         if session[:source]
             greeting = "Thanks, you came from #{session[:source]}, and you are on the #{layout_name} layout"

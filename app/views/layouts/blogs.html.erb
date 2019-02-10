@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>
+    <%= @page_title %>
+  </title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="keywords" content="<%= @seo_keywords %>" />
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
 
 
-    <%= login_helper %>
+  <%= login_helper "blah" %>
 
-    <hr />
+  <hr />
 
-    <%= render 'shared/nav', location: 'bottom' %>
-    
-    <%= source_helper 'blogs' %>
-    
-    <%= yield %>
+  <%= render 'shared/nav', location: 'bottom' %>
 
-    </body>
+  <%= source_helper 'blogs' %>
+
+  <%= yield %>
+
+</body>
+
 </html>

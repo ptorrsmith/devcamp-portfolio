@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag    'portfolio_items', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>
+    <%= @page_title %>
+  </title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="keywords" content="<%= @seo_keywords %>" />
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <%= stylesheet_link_tag    'portfolio_items', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
 
 
-    <%= render 'shared/nav', location: 'bottom' %>
-    
-    <hr />
-    
-    <%= login_helper %>
-    
-    <%= source_helper("portfolio_items") %>
-    
-    <%= yield %>
-    </body>
+  <%= render 'shared/nav', location: 'bottom' %>
+
+  <hr />
+
+  <%= login_helper "blah" %>
+
+  <%= source_helper("portfolio_items") %>
+
+  <%= yield %>
+</body>
+
 </html>

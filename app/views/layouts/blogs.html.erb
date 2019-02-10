@@ -28,19 +28,7 @@
 
 
 
-  <!-- Start blog nav -->
-  <div class="blog-masthead">
-    <div class="container">
-      <nav class="nav blog-nav">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">New features</a>
-        <a class="nav-link" href="#">Press</a>
-        <a class="nav-link" href="#">New hires</a>
-        <a class="nav-link" href="#">About</a>
-      </nav>
-    </div>
-  </div>
-  <!-- end blog nav -->
+  <%= render 'shared/blog_nav'%>
 
   <!-- start blog header -->
   <div class="blog-header">
@@ -59,8 +47,6 @@
   </p>
  -->
 
-  <!-- to change to blog nav -->
-  <!-- <%#= render 'shared/application_nav'%> -->
 
 
   <!-- start of container and row elements -->
@@ -68,7 +54,7 @@
 
     <div class="row">
 
-      <%= login_helper %>
+      <!-- <%= login_helper %> -->
 
       <%= yield %>
 

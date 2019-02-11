@@ -63,6 +63,8 @@ gem 'pts_devcamp_view_tool', git: 'https://github.com/ptorrsmith/pts_devcamp_vie
 
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

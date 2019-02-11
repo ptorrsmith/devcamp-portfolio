@@ -30,16 +30,7 @@
 
   <%= render 'shared/blog_nav'%>
 
-  <!-- start blog header -->
-  <div class="blog-header">
-    <div class="container">
-      <h1 class="blog-title">Blogs</h1>
-      <p class="lead blog-description">What's going down :-)</p>
-      <%= link_to 'Create a new Blog', new_blog_path if logged_in?(:site_admin) %>
-      <%#= link_to "destroy", destroy_listing_path(listing) if logged_in?(:site_admin) %>
-    </div>
-  </div>
-  <!-- end blog header -->
+  <%= render 'shared/blog_masthead' %>
   <!-- 
   <p class="notice">
     <%#= notice %>
@@ -61,14 +52,7 @@
       <%= render 'shared/blog_sidebar' %>
     </div>
 
-    <!-- start blog footer -->
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-    <!-- end blog footer -->
+    <%= render 'shared/blog_footer' %>
 
     <%#= @copyright %>
 

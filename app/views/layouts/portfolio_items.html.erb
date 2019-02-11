@@ -33,14 +33,8 @@
   <main role="main">
 
     <%= render 'shared/portfolio_masthead' %>
+    <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
 
-    <div style="border: 1px solid red">
-      <%= render 'shared/nav', location: 'bottom' %>
-      <hr />
-      <%= login_helper %>
-      <hr />
-      <%= source_helper("portfolio_items") %>
-    </div>
 
     <%= yield %>
 

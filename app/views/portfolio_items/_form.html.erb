@@ -1,51 +1,73 @@
 <%= form_with(model: portfolio_item, local: true) do |form| %>
-  <% if portfolio_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(portfolio_item.errors.count, "error") %> prohibited this portfolio_item from being saved:</h2>
-
-      <ul>
-      <% portfolio_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subtitle %>
-    <%= form.text_field :subtitle %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
+<% if portfolio_item.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(portfolio_item.errors.count, "error") %> prohibited this portfolio_item from being saved:</h2>
 
   <ul>
-    <%= form.fields_for :technologies do |technology_form|%>
-      <li>
-        <%= technology_form.label :name %>
-        <%= technology_form.text_field :name %>
-      </li>
+    <% portfolio_item.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
     <% end %>
   </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :main_image %>
-    <%= form.text_field :main_image %>
+<div class="row">
+
+  <div class="col-md-6">
+
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :subtitle %>
+      <%= form.text_field :subtitle, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'form-control', rows: 13 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :thumbnail_image %>
-    <%= form.text_field :thumb_image %>
+
+  <div class="col-md-6">
+    <h3>Technologies and Practices used</h3>
+    <div>
+      <%= form.fields_for :technologies do |technology_form|%>
+      <div class="form-group">
+        <%= technology_form.label :name %>
+        <%= technology_form.text_field :name, class: 'form-control' %>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <hr />
+    <h4>Imagery</h4>
+    <div class="form-group">
+      <%= form.label :main_image %>
+      <%= form.text_field :main_image, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :thumbnail_image %>
+      <%= form.text_field :thumb_image, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
+
 <% end %>

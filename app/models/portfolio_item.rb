@@ -23,7 +23,7 @@ class PortfolioItem < ApplicationRecord
 
         # using concerns
         self.main_image ||= PlaceholderImage.image_generator(height: '600', width: '450')
-        self.thumb_image ||= PlaceholderImage.image_generator(height: 350, width: 250)
+        self.thumb_image ||= PlaceholderImage.image_generator(height: 356, width: 280)
     end
 
 end

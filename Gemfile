@@ -55,6 +55,7 @@ gem 'devise', '~> 4.5'
 # as per bootstrap-rubygem docs, different from Udemy video
 gem 'jquery-rails'
 
+# gem 'bootstrap', '4.0.0.alpha6'
 gem 'bootstrap', '~> 4.2.1'
 
 # normally don't publish all gems to rebygems.org unless want to share

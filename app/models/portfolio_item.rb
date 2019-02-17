@@ -6,6 +6,7 @@ class PortfolioItem < ApplicationRecord
     include PlaceholderImage  # concern
     validates_presence_of :title, :body, :main_image, :thumb_image
 
+    ################## SCOPES - 2 styles / approaches / options  ############################
     # define scope option 1
     def self.javascript
         where(subtitle: 'Javascript')  # one way
@@ -13,6 +14,17 @@ class PortfolioItem < ApplicationRecord
 
     # define scope option 2 (using the lambda construct)
     scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails')}
+    
+    ################## END - SCOPES - 2 styles / approaches / options  ############################
+
+
+    def self.by_position
+        # this is called a  "scope", refining the default data set (order, where, etc)
+        order('position asc')
+    end
+
+
+
 
     after_initialize :set_defaults
 

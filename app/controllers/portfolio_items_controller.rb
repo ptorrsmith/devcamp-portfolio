@@ -17,8 +17,11 @@ class PortfolioItemsController < ApplicationController
   
 
     def index
-        @portfolio_items = PortfolioItem.all
-        # @portfolio_things = PortfolioItem.all
+        # @portfolio_items = PortfolioItem.all
+        # # this is called a  "scope", refining the default data set
+        # @portfolio_items = PortfolioItem.order('position ASC')
+        @portfolio_items = PortfolioItem.by_position
+        # binding.pry
     end
     
     def ruby_on_rails_portfolio_items

@@ -55,6 +55,7 @@ gem 'devise', '~> 4.5'
 # as per bootstrap-rubygem docs, different from Udemy video
 gem 'jquery-rails'
 
+# gem 'bootstrap', '4.0.0.alpha6'
 gem 'bootstrap', '~> 4.2.1'
 
 # normally don't publish all gems to rebygems.org unless want to share
@@ -62,6 +63,10 @@ gem 'bootstrap', '~> 4.2.1'
 gem 'pts_devcamp_view_tool', git: 'https://github.com/ptorrsmith/pts_devcamp_view_tool'
 
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

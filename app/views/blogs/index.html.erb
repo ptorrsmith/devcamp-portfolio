@@ -3,12 +3,15 @@
 </p> -->
 
 <div class="col-sm-8 blog-main">
+  <%= paginate @blogs %>
 
-  <% # partials with conventional collections %>
+  <%# partials with conventional collections %>
   <%= render @blogs %>
 
-  <nav class="blog-pagination">
+
+  <%= paginate @blogs %>
+  <!-- <nav class="blog-pagination">
     <a class="btn btn-outline-primary" href="#">Older</a>
     <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-  </nav>
+  </nav> -->
 </div><!-- /.blog-main -->

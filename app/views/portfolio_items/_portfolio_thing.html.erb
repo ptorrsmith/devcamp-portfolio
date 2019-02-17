@@ -1,6 +1,48 @@
-    <h2><%=link_to portfolio_thing.title, portfolio_item_show_path(portfolio_thing)%></h2>
-    <h4><%=portfolio_thing.subtitle%></h4>
-    <p><%=portfolio_thing.body%></p>
-    <p><%=image_tag portfolio_thing.thumb_image unless portfolio_thing.thumb_image.nil?%></p>
-    <p><%= link_to "Edit", edit_portfolio_item_path(portfolio_thing.id) if logged_in?(:site_admin) %></p>
-    <p><%= link_to "Delete (destroy)", portfolio_item_path(portfolio_thing), method: :delete, data: { confirm: 'sure you wanna blow this away?'} if logged_in?(:site_admin) %></p>
+<div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+        <%=image_tag portfolio_thing.thumb_image unless portfolio_thing.thumb_image.nil?%>
+        <div class="card-body">
+            <p class="card-text">
+                <span>
+                    <%=link_to portfolio_thing.title, portfolio_item_show_path(portfolio_thing)%>
+                </span>
+                <%=portfolio_thing.subtitle%>
+            </p>
+            <p>
+                <%=portfolio_thing.body.truncate_words(15) %>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                    <%= (link_to "Edit", edit_portfolio_item_path(portfolio_thing.id), class: "btn btn-sm btn-outline-primary") if logged_in?(:site_admin) %>
+                    &nbsp;
+                    <%= link_to "Delete", portfolio_item_path(portfolio_thing), class: "btn btn-sm btn-outline-secondary", method: :delete, data: { confirm: 'sure you wanna blow this away?'} if logged_in?(:site_admin) %>
+                </div>
+                <small class="text-muted">
+                    <%= portfolio_thing.body.length %> words</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<h2>
+    <%#=link_to portfolio_thing.title, portfolio_item_show_path(portfolio_thing)%>
+</h2>
+<h4>
+    <%#=portfolio_thing.subtitle%>
+</h4>
+<p>
+    <%#=portfolio_thing.body%>
+</p>
+<p>
+    <%#=image_tag portfolio_thing.thumb_image unless portfolio_thing.thumb_image.nil?%>
+</p>
+<p>
+    <%#= link_to "Edit", edit_portfolio_item_path(portfolio_thing.id) if logged_in?(:site_admin) %>
+</p>
+<p>
+    <%#= link_to "Delete (destroy)", portfolio_item_path(portfolio_thing), method: :delete, data: { confirm: 'sure you wanna blow this away?'} if logged_in?(:site_admin) %>
+</p>
+ -->

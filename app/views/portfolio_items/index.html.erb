@@ -1,10 +1,16 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+        <%= link_to "Create new Portfolio Item", new_portfolio_item_path if logged_in?(:site_admin) %>
 
-<h1>Portfolio Items</h1>
+        <div class="row">
 
-<p id="notice"><%= notice %></p>
+            <!-- <h1>Portfolio Items</h1> -->
 
+            <!-- <p id="notice"><%#= notice %></p> -->
 
-<%= link_to "Create new Portfolio Item", new_portfolio_item_path if logged_in?(:site_admin) %>
+            <%# partials with manual / override collections %>
+            <%= render partial: 'portfolio_thing', collection: @portfolio_items %>
 
-<% # partials with manual / override collections %>
-<%= render partial: 'portfolio_thing', collection: @portfolio_items %>
+        </div>
+    </div>
+</div>

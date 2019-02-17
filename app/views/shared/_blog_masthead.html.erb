@@ -1,0 +1,10 @@
+<!-- start blog header -->
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">Blogs</h1>
+        <p class="lead blog-description">What's going down :-)</p>
+        <%= link_to 'Create a new Blog', new_blog_path if logged_in?(:site_admin) %>
+        <%#= link_to "destroy", destroy_listing_path(listing) if logged_in?(:site_admin) %>
+    </div>
+</div>
+<!-- end blog header -->

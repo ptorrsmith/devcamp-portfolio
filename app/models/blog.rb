@@ -9,8 +9,8 @@ class Blog < ApplicationRecord
 
     # this is a scope
     def self.special_blogs
-        all
-        # limit 3
+        # all
+        limit 3
     end
 
     def self.featured_blogs

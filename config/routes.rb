@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'pages#home'
+  root 'pages#home'
+  # root to: 'pages#home'
   # get 'home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -55,6 +55,8 @@ gem 'devise', '~> 4.5'
 # as per bootstrap-rubygem docs, different from Udemy video
 gem 'jquery-rails'
 
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+
 # gem 'bootstrap', '4.0.0.alpha6'
 gem 'bootstrap', '~> 4.2.1'
 

@@ -18,8 +18,13 @@ class ApplicationController < ActionController::Base
 
 # byebug
 
-       
+    ############ Rails 5.1 / 5.2 changes ############################################
+
     # noticed protect_from_forgery appears to be in Base, so no longer declared here
+    
+    #################################################################################
+
+
 
     # MOVED TO CONCERN MODULE
     # before_action :configure_permitted_parameters, if: :devise_controller?

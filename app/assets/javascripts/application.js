@@ -10,13 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
-//= require_tree .
 
-// Added by PTS as per bootstrap-rubygems docs. Note jquery3 not jquery
-//= require jquery3
+// Set the JS call order here, as often important.
+// e.g. turbolinks known to cause bugs, so include our html5sortable code explicitly
+
+// Note, can't have comments after //= require statements  // such as this :-( !!!!
+
+// Have set explicity order for load here
+
+//= require jquery3    
+//= require bootstrap-sprockets    
+//= require bootstrap    
+//= require rails-ujs
+//= require jquery-ui
+//= require html5sortable
 //= require popper
-//= require bootstrap-sprockets
-//= require bootstrap
+//= require turbolinks
+//= require activestorage
+
+// gets all other .js in this folder ??  // so should bring in our html5sortable.js source
+//= require_tree .

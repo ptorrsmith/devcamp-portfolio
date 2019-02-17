@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
+@import "jquery-ui"; // scss import style
+/* below if using css, not scss
+ * = require jquery-ui
+ */
 
 
 .jumbotron {

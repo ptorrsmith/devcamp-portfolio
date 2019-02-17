@@ -1,7 +1,27 @@
 Rails.application.routes.draw do
   
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
-  resources :portfolio_items, except: [:show]
+
+  # resources :portfolio_items, except: [:show] do
+  #   put :sort, on: collection
+  # end
+
+
+  resources :portfolio_items, except: [:show] do
+		collection do
+			put 'sort'
+		end
+    # resources :portfolio_items, except: [:show] do
+    #   put :sort, on: collection
+    # end
+
+		# member do
+		# 	put 'some_method'
+		# end
+	end
+
+  
+
   get 'javascript_items', to: 'portfolio_items#javascript_portfolio_items'
   # override default plural to make singular
   get 'portfolio_item/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'

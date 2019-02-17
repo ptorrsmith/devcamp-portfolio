@@ -16,6 +16,33 @@ class PortfolioItemsController < ApplicationController
     # access [:all, :user] => [:show, :index]
   
 
+    # for ajax sort call
+    def sort
+        # params[:order].each | item | do
+
+        params[:order].each do |key, value|
+            
+            # binding.pry
+            
+            # puts "************** params **************"
+            # puts params
+            # puts "************************************"
+            # puts "^^^^^^^^^^^^^^^^^^^^ key, value ^^^^^^^^^^^^^^^^^^^^"
+            # puts key
+            # puts value[:id]
+            # puts value[:position]
+            # puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+
+            # update the appropriate portfolio_item with it's new position value from the ajax call
+            PortfolioItem.find(value[:id]).update(position: value[:position])
+        end
+
+        render body: nil
+        # old pre 5.1 syntax
+        # render nothing: true
+
+    end
+
     def index
         # @portfolio_items = PortfolioItem.all
         # # this is called a  "scope", refining the default data set

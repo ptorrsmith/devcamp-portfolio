@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 		# end
 	end
 
+  get 'rails_items', to: 'portfolio_items#ruby_on_rails_portfolio_items'
   
 
   get 'javascript_items', to: 'portfolio_items#javascript_portfolio_items'

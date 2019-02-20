@@ -1,12 +1,24 @@
 <h1>Javascript Portfolio Items</h1>
 
 <%= link_to "Create new Portfolio Item", new_portfolio_item_path %>
-
+<%# binding.pry %>
 <% @javascript_portfolio_items.each do |portfolio_item| %>
-    <h2><%=link_to portfolio_item.title, portfolio_item_show_path(portfolio_item)%></h2>
-    <h4><%=portfolio_item.subtitle%></h4>
-    <p><%=portfolio_item.body%></p>
-    <p><%=image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%></p>
-    <p><%= link_to "Edit", edit_portfolio_item_path(portfolio_item.id) %></p>
-    <p><%= link_to "Delete (destroy)", portfolio_item_path(portfolio_item), method: :delete, data: { confirm: 'sure you wanna blow this away?'} %></p>
+<h2>
+    <%=link_to portfolio_item.title, portfolio_item_show_path(portfolio_item)%>
+</h2>
+<h4>
+    <%=portfolio_item.subtitle%>
+</h4>
+<p>
+    <%=portfolio_item.body%>
+</p>
+<p>
+    <%=image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
+</p>
+<p>
+    <%= link_to "Edit", edit_portfolio_item_path(portfolio_item.id) %>
+</p>
+<p>
+    <%= link_to "Delete (destroy)", portfolio_item_path(portfolio_item), method: :delete, data: { confirm: 'sure you wanna blow this away?'} %>
+</p>
 <% end %>

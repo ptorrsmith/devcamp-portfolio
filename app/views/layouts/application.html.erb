@@ -39,7 +39,18 @@
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-    <div id="background"></div>
+    <!-- background image -->
+    <!-- <div id="background"></div> -->
+
+    <%= video_tag(
+      'pts_portfolio_bkgd_cover_vid_dark_sml4.mp4',
+      id: 'background',
+      autoplay: true,
+      loop: true,
+      # muted: true,
+      poster: 'video_start.png'
+    ) %>
+
     <%= render 'shared/application_nav'%>
 
     <!-- <hr /> -->

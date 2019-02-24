@@ -13,6 +13,9 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+# if spring causes problems (tip from udemy tutorial 172)
+# require "dotenv/rails"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

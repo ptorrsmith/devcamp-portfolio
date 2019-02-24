@@ -4,7 +4,11 @@ class PortfolioItemUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+
+  # used in udemy initial local store 
+  # storage :file
+  storage :aws
+
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

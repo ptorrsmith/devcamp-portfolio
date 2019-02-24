@@ -16,6 +16,7 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+/public/uploads/*
 
 /node_modules
 /yarn-error.log
@@ -28,3 +29,6 @@
 
 # ignore old rails 5 secrets files
 /config/secrets.yml
+
+
+.env

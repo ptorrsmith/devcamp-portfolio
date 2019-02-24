@@ -4,7 +4,8 @@
         <!-- <p id="notice"><%#= notice %></p> -->
 
         <div class="col-md-7">
-            <%=image_tag @portfolio_item.main_image.to_s, width: '100%' unless @portfolio_item.main_image.nil?%>
+            <%#=image_tag @portfolio_item.main_image.to_s, width: '100%' unless @portfolio_item.main_image.nil?%>
+            <%=image_tag portfolio_item_img(@portfolio_item, 'main'), width: '100%' unless @portfolio_item.main_image.nil?%>
 
         </div>
         <div class="col-md-5">

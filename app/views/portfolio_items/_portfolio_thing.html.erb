@@ -1,6 +1,6 @@
 <div class="col-md-4">
     <div class="card mb-4 shadow-sm" data-id="<%= portfolio_thing.id %>">
-        <%=image_tag portfolio_thing.thumb_image unless portfolio_thing.thumb_image.nil?%>
+        <%=image_tag portfolio_thing.thumb_image.to_s, width: '100%' unless portfolio_thing.thumb_image.nil?%>
         <div class="card-body">
             <p class="card-text">
                 <span>

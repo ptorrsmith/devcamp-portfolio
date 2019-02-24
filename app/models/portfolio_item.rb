@@ -1,11 +1,15 @@
 class PortfolioItem < ApplicationRecord
+    # require 'carrierwave'
     has_many :technologies
     accepts_nested_attributes_for   :technologies, 
-                                    reject_if: lambda { |attrs| attrs['name'].blank? }
-
+    reject_if: lambda { |attrs| attrs['name'].blank? }
+    
     include PlaceholderImage  # concern
     validates_presence_of :title, :body, :main_image, :thumb_image
-
+    
+    mount_uploader :thumb_image, PortfolioItemUploader
+    mount_uploader :main_image, PortfolioItemUploader
+    
     ################## SCOPES - 2 styles / approaches / options  ############################
     # define scope option 1
     def self.javascript
@@ -34,6 +38,8 @@ class PortfolioItem < ApplicationRecord
         # self.thumb_image ||= 'http://placehold.it/350x200'
 
         # using concerns
+
+        # set these to portfolio defaults
         self.main_image ||= PlaceholderImage.image_generator(height: '600', width: '450')
         self.thumb_image ||= PlaceholderImage.image_generator(height: 356, width: 280)
     end

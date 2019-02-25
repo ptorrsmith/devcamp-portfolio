@@ -71,7 +71,7 @@ class PortfolioItemsController < ApplicationController
 
     def new
         @portfolio_item = PortfolioItem.new
-        3.times { @portfolio_item.technologies.build }
+        # 3.times { @portfolio_item.technologies.build } # removed now as doing technolgy add/remove via javascript and cocoon
     end
 
     def create
@@ -110,7 +110,8 @@ class PortfolioItemsController < ApplicationController
     def update
         respond_to do |format|
             if @portfolio_item.update(portfolio_item_params)
-                format.html { redirect_to portfolio_items_path, notice: 'Portfolio Item was updated gud buddy!' }
+                # format.html { redirect_to portfolio_items_path, notice: 'Portfolio Item was updated gud buddy!' }
+                format.html { redirect_to portfolio_item_show_path(@portfolio_item), notice: 'Portfolio Item was updated gud buddy!' }
             #   format.json { render :show, status: :created, location: @portfolio_item }
             else
               format.html { render :new }
@@ -137,7 +138,7 @@ class PortfolioItemsController < ApplicationController
                                                 :thumb_image, 
                                                 :main_image,
                                                 :thumb_image,
-                                                technologies_attributes: [:name]
+                                                technologies_attributes: [:id, :name, :_destroy]
                                                 )
     end
 end

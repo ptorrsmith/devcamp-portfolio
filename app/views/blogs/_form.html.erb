@@ -1,6 +1,6 @@
 <%#= form_for(blog) do |form| %>
-
-<%= form_with(model: blog, local: true) do |form| %>
+<!-- form_with is better / the future -->
+<%= form_with(model: blog) do |form| %>
 <% if blog.errors.any? %>
 <div id="error_explanation">
   <h2>

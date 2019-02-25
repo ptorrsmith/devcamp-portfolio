@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
     # @blogs = Blog.all
     # @blogs = Blog.limit 2
     # binding.pry
-    @blogs = Blog.page(params[:page]).per(3)
+    @blogs = Blog.page(params[:page]).per(3).order('updated_at DESC')
     # binding.pry
     # @blogs = Blog.featured_blogs # for debugging with pry demo ()
     # binding.pry

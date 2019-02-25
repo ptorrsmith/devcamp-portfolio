@@ -23,10 +23,11 @@
 //= require bootstrap    
 //= require rails-ujs
 //= require jquery-ui
-//= require html5sortable
+// require html5sortable
 //= require popper
 //= require turbolinks
 //= require activestorage
+//= require cocoon
 
-// gets all other .js in this folder ??  // so should bring in our html5sortable.js source
+// next line gets all other .js in this folder ??  // so should bring in our html5sortable.js source.  Which it now appears to do, so hence commented out above
 //= require_tree .

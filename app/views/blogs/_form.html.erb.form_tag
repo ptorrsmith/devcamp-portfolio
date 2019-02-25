@@ -1,0 +1,27 @@
+<!-- see https://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html -->
+
+<!-- showing that form_tag can take a block (do) -->
+
+<!-- WARNING... defaults to post, so won't update! -->
+
+<!-- form_tag and form_for are soft deprecated and they will be replaced by form_with in the future. -->
+<!-- see https://m.patrikonrails.com/rails-5-1s-form-with-vs-old-form-helpers-3a5f72a8c78a -->
+
+<%= form_tag(blogs_path) do %>
+<div class="form-group">
+  <%= label_tag 'title' %>
+  <%= text_field_tag 'blog[title]', blog.title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= label_tag 'body', 'Blog Content' %>
+  <%= text_area_tag 'blog[body]', blog.body, class: 'form-control', rows: 15 %>
+</div>
+
+<div class="form-group">
+  <%= submit_tag 'save', class: 'btn btn-primary' %>
+</div>
+
+
+
+<% end %>

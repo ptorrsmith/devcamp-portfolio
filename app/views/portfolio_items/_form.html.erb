@@ -18,7 +18,6 @@
 
   <div class="col-md-6">
 
-
     <div class="form-group">
       <%= form.label :title %>
       <%= form.text_field :title, class: 'form-control' %>
@@ -28,6 +27,8 @@
       <%= form.label :subtitle %>
       <%= form.text_field :subtitle, class: 'form-control' %>
     </div>
+
+    <h4>Imagery</h4>
 
     <div class="form-group">
       <%#= form.label :main_image %>
@@ -47,10 +48,6 @@
       </label> -->
     </div>
 
-
-
-
-
   </div>
   <div class="col-md-6">
     <div class="form-group">
@@ -59,24 +56,28 @@
     </div>
   </div>
 
-
   <div class="col-md-6">
     <h3>Technologies and Practices used</h3>
     <div>
       <%= form.fields_for :technologies do |technology_form|%>
-      <div class="form-group">
-        <%= technology_form.label :name %>
-        <%= technology_form.text_field :name, class: 'form-control' %>
-      </div>
+      <%= render 'technology_fields', f: technology_form %>
       <% end %>
+      <!-- <%#= form.fields_for :technologies do |technology_form|%>
+        <div class="form-group">
+          <%#= technology_form.label :name %>
+          <%#= technology_form.text_field :name, class: 'form-control' %>
+        </div>
+        <%# end %>
+        </div> -->
+      <div class="association">
+        <%= link_to_add_association 'add technology', form, :technologies %>
+      </div>
     </div>
+    <div class="col-md-6">
 
-  </div>
-  <div class="col-md-6">
-
-    <hr />
-    <h4>Imagery</h4>
-    <!-- <div class="form-group">
+      <!-- pre-upload -->
+      <!-- <h4>Imagery</h4> -->
+      <!-- <div class="form-group">
       <%#= form.label :main_image %>
       <%#= form.text_field :main_image, class: 'form-control' %>
     </div>
@@ -86,11 +87,11 @@
       <%#= form.text_field :thumb_image, class: 'form-control' %>
     </div> -->
 
-    <div class="actions">
-      <%= form.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block' %>
+      <div class="actions">
+        <%= form.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block' %>
+      </div>
     </div>
+
   </div>
 
-</div>
-
-<% end %>
+  <% end %>

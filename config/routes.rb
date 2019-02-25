@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'javascript_items', to: 'portfolio_items#javascript_portfolio_items'
   # override default plural to make singular
   get 'portfolio_item/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'
+  # get 'portfolio_items/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'
 
   # get 'pages/home'
   get 'about-me', to: 'pages#about'

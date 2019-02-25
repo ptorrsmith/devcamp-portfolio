@@ -1,8 +1,9 @@
 class PortfolioItem < ApplicationRecord
     # require 'carrierwave'
-    has_many :technologies
+    has_many :technologies # , inverse_of: :portfolio_item  # need to explore what this brings... see https://www.viget.com/articles/exploring-the-inverse-of-option-on-rails-model-associations/ and https://guides.rubyonrails.org/association_basics.html
     accepts_nested_attributes_for   :technologies, 
-    reject_if: lambda { |attrs| attrs['name'].blank? }
+                                    allow_destroy: true,
+                                    reject_if: lambda { |attrs| attrs['name'].blank? }
     
     # include PlaceholderImage  # concern
     # validates_presence_of :title, :body, :main_image, :thumb_image

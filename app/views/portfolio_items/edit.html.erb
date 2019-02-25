@@ -4,7 +4,8 @@
     </h1>
 
     <%= render 'form', portfolio_item: @portfolio_item %>
-
-    <%= link_to 'Show', @portfolio_item %> |
+    <!-- @portfolio_item links incorrectly to portfolio_items/:id, not the singular as we defined -->
+    <!-- <%#= link_to 'Show', @portfolio_item %> | -->
+    <%= link_to 'Show', portfolio_item_show_path(@portfolio_item) %> |
     <%= link_to 'Back', portfolio_items_path %>
 </div>

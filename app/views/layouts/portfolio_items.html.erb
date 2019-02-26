@@ -20,12 +20,6 @@
 </head>
 
 <body>
-  <!-- <p class="notice">
-    <%#= notice %>
-  </p>
-  <p class="alert">
-    <%#= alert %>
-  </p> -->
 
   <%= render 'shared/portfolio_nav' %>
 
@@ -33,8 +27,16 @@
   <main role="main">
 
     <%= render 'shared/portfolio_masthead'  %>
-    <% puts params %>
+
+    <%# puts params %>
     <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+
+    <!-- <p class="notice">
+      <%#= notice %>
+    </p>
+    <p class="alert">
+      <%#= alert %>
+    </p> -->
 
 
     <%= yield %>
@@ -42,6 +44,9 @@
   </main>
 
   <%= render 'shared/portfolio_footer' %>
+
+  <%= render 'shared/alerts' %>
+
 
 </body>
 

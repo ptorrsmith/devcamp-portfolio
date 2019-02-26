@@ -41,6 +41,22 @@ module ApplicationHelper
             # js add_gritter(alert, title: "Hey you...", sticky: false)
             alert_generator alert
         end
+
+        # if flash[:alert] || flash[:error] || flash[:notice]
+        #     # byebug
+        # end
+
+
+        # if flash[:alert]
+        #     alert_generator flash[:alert]
+        # end
+
+        # if flash[:error]
+        #    alert_generator flash[:error]
+        # end
+        # if flash[:notice]
+        #     alert_generator flash[:notice]
+        # end
     end
 
     def alert_generator msg

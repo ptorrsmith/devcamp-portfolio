@@ -52,7 +52,8 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was made gud.' }
+        # notice: is set into flash
+        format.html { redirect_to @blog, notice: 'Blog was made gud.', alert: 'blah' }
         format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }

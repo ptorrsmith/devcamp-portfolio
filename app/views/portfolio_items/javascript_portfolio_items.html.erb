@@ -4,7 +4,8 @@
 <%# binding.pry %>
 <% @javascript_portfolio_items.each do |portfolio_item| %>
 <h2>
-    <%=link_to portfolio_item.title, portfolio_item_show_path(portfolio_item)%>
+    <%#=link_to portfolio_item.title, portfolio_item_show_path(portfolio_item)%>
+    <%=link_to portfolio_item.title, portfolio_item%>
 </h2>
 <h4>
     <%=portfolio_item.subtitle%>

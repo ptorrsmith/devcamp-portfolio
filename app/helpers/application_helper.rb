@@ -33,4 +33,38 @@ module ApplicationHelper
     def copyright_generator
         PtsDevcampViewTool::Renderer.copyright 'Peter Torr Smith', 'Have a great day :-)'
     end
+
+    def alerts
+        alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+        if alert
+            # js add_gritter(alert, title: "Hey you...", sticky: false)
+            alert_generator alert
+        end
+
+        # if flash[:alert] || flash[:error] || flash[:notice]
+        #     # byebug
+        # end
+
+
+        # if flash[:alert]
+        #     alert_generator flash[:alert]
+        # end
+
+        # if flash[:error]
+        #    alert_generator flash[:error]
+        # end
+        # if flash[:notice]
+        #     alert_generator flash[:notice]
+        # end
+    end
+
+    def alert_generator msg
+        js add_gritter(msg, title: "Hey you...", sticky: false)
+    end
+
+
+
+
+
 end

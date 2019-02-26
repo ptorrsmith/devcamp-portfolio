@@ -7,6 +7,8 @@
 /* below if using css, not scss
  * = require jquery-ui
  */
+@import 'gritter';
+
 
 
 .jumbotron {
@@ -52,4 +54,18 @@ footer p {
 
 .portfolio-container {
     padding-top: 30px;
+}
+
+#gritter-notice-wrapper {
+    padding-top: 60px;
+}
+
+// to override gritter notification backgroun
+.gritter-item.gritter-css3 {
+    background: orange;
+}
+
+// to override gritter notification backgroun
+.gritter-item.gritter-css3 {
+    background: plum;
 }

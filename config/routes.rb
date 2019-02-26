@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   # end
 
 
-  resources :portfolio_items, except: [:show] do
-		collection do
+  # resources :portfolio_items, except: [:show] do
+  # decided not to override the show path as has path-generatin side effects I've not figured out around yet
+    resources :portfolio_items do
+      collection do
 			put 'sort'
 		end
     # resources :portfolio_items, except: [:show] do
@@ -25,7 +27,8 @@ Rails.application.routes.draw do
 
   get 'javascript_items', to: 'portfolio_items#javascript_portfolio_items'
   # override default plural to make singular
-  get 'portfolio_item/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'
+  # decided not to override the show path as has path-generatin side effects I've not figured out around yet
+  # get 'portfolio_item/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'
   # get 'portfolio_items/:id', to: 'portfolio_items#show', as: 'portfolio_item_show'
 
   # get 'pages/home'

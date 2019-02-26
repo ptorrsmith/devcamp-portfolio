@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import 'gritter';
 
 // @import "font-awesome";
 
@@ -159,4 +160,13 @@ body {
 
 .app-footer {
   color: white;
+}
+
+#gritter-notice-wrapper {
+  padding-top: 60px;
+}
+
+// to override gritter notification backgroun
+.gritter-item.gritter-css3 {
+  background: seagreen;
 }

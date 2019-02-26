@@ -26,6 +26,9 @@
 // require html5sortable // no longer appear to need to be specified... brought in via require_tree .
 //= require popper
 //= require cocoon
+//= require gritter
+
+// apparently good to have turbolinks load near end to avoid some problems ?? 
 //= require turbolinks
 //= require activestorage
 

@@ -1,25 +1,29 @@
-<%#= form_for(blog) do |form| %>
+<!-- <%#= form_for(blog) do |form| %> -->
 <!-- form_with is better / the future -->
-<!-- without local: true, submits via ajax, so form never reloads so errors don't show.  Not ideal -->
-<%= form_with(model: blog, local: true) do |form| %>
+<%= form_with(model: blog) do |form| %>
 <% if blog.errors.any? %>
 <% blog.errors.full_messages.each do |error| %>
-<%#= js add_gritter(error, title: 'Error!', sticky: false, class: 'gritter-item-devcamp') %>
-<%= alert_generator error %>
+<%# binding.pry %>
+xxxxxxxxxxx
+<%= error.inspect %>
+<%= js add_gritter(error, :title => "Peter Torr Smith - Portfolio") %>
+
 <% end %>
-<!-- <div id="error_explanation">
+yyyyyyyyyyyyy
+<div id="error_explanation">
   <h2>
-    <%#= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+    <%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
   <ul>
-    <%# blog.errors.full_messages.each do |message| %>
+    <% blog.errors.full_messages.each do |message| %>
     <li>
-      <%#= message %>
+      <%= message %>
     </li>
-    <%# end %>
+    <% end %>
   </ul>
-</div> -->
+</div>
 <% end %>
+
 <div class="form-group">
   <%= form.label :title %>
   <%= form.text_field :title, class: "form-control", placeholder: "Blog title" %>

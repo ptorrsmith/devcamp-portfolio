@@ -16,7 +16,9 @@
   <meta name="keywords" content="<%= @seo_keywords %>" />
 
   <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag    'blogs', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_include_tag 'application' %>
 
   <%# <!-- TODO Custom styles for this template -->
       <!-- <link href="cover.css" rel="stylesheet"> -->
@@ -37,8 +39,8 @@
   </p>
   <p class="alert">
     <%#= alert %>
-  </p>
- -->
+  </p> -->
+
 
 
 
@@ -59,6 +61,9 @@
     <!-- <%#= render 'shared/nav', location: 'bottom' %> -->
 
     <%= source_helper 'blogs' %>
+
+    <%#= render 'shared/alerts' %>
+    <%= alerts %>
 
   </div>
 

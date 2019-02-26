@@ -197,3 +197,12 @@ h6,
 .social-links li a {
     font-size: 2.5em;
 }
+
+#gritter-notice-wrapper {
+    padding-top: 60px;
+}
+
+// to override gritter notification backgroun
+.gritter-item.gritter-css3 {
+    background: orange;
+}

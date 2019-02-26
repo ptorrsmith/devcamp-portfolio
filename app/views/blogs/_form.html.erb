@@ -6,7 +6,7 @@
 <%# binding.pry %>
 
 <% blog.errors.full_messages.each do |error| %>
-<%= js add_gritter(error, title: 'Error!') %>
+<%= js add_gritter(error, title: 'Error!', sticky: false, class: 'gritter-item-devcamp') %>
 
 <% end %>
 <!-- <div id="error_explanation">

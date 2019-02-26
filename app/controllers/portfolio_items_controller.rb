@@ -79,10 +79,11 @@ class PortfolioItemsController < ApplicationController
         # @portfolio_item = PortfolioItem.new(params.require(:portfolio_item).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name]))
         respond_to do |format|
             if @portfolio_item.save
-              format.html { redirect_to portfolio_item_show_path(@portfolio_item), notice: 'Portfolio Item was made gud mate!' }
-            #   format.json { render :show, status: :created, location: @portfolio_item }
+                # format.html { redirect_to portfolio_item_show_path(@portfolio_item), notice: 'Portfolio Item was made gud mate!' }
+                format.html { redirect_to @portfolio_item, notice: 'Portfolio Item was made gud mate!' }
+                #   format.json { render :show, status: :created, location: @portfolio_item }
             else
-              format.html { render :new }
+              format.html { render :new } # perhaps hould be redirect to new?
             #   format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
             end
           end
@@ -111,7 +112,7 @@ class PortfolioItemsController < ApplicationController
         respond_to do |format|
             if @portfolio_item.update(portfolio_item_params)
                 # format.html { redirect_to portfolio_items_path, notice: 'Portfolio Item was updated gud buddy!' }
-                format.html { redirect_to portfolio_item_show_path(@portfolio_item), notice: 'Portfolio Item was updated gud buddy!' }
+                format.html { redirect_to @portfolio_item, notice: 'Portfolio Item was updated gud buddy!' }
             #   format.json { render :show, status: :created, location: @portfolio_item }
             else
               format.html { render :new }

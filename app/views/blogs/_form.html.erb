@@ -3,11 +3,9 @@
 <!-- without local: true, submits via ajax, so form never reloads so errors don't show.  Not ideal -->
 <%= form_with(model: blog, local: true) do |form| %>
 <% if blog.errors.any? %>
-<%# binding.pry %>
-
 <% blog.errors.full_messages.each do |error| %>
-<%= js add_gritter(error, title: 'Error!', sticky: false, class: 'gritter-item-devcamp') %>
-
+<%#= js add_gritter(error, title: 'Error!', sticky: false, class: 'gritter-item-devcamp') %>
+<%= alert_generator error %>
 <% end %>
 <!-- <div id="error_explanation">
   <h2>

@@ -12,24 +12,32 @@
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Explore</h4>
                     <ul class="list-unstyled">
+
+                        <%= nav_helper 'text-white', 'li' %>
+
+
                         <!-- <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li> -->
-                        <li>
-                            <%= link_to "Home", root_path, class: "text-white" %>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li> -->
+
+                        <!-- old nav, before nav-helper -->
+                        <!-- 
+                            <li>
+                            <%#= link_to "Home", root_path, class: "text-white" %>
                         </li>
                         <li>
-                            <%= link_to "About", about_me_path, class: "text-white" %>
+                            <%#= link_to "About", about_me_path, class: "text-white" %>
                         </li>
                         <li>
-                            <%= link_to "Contact", contact_path, class: "text-white" %>
+                            <%#= link_to "Contact", contact_path, class: "text-white" %>
                         </li>
                         <li>
-                            <%= link_to "Blogs", blogs_path, class: "text-white active" %>
+                            <%#= link_to "Blogs", blogs_path, class: "text-white active" %>
                         </li>
                         <li>
-                            <%= link_to "Portfolio", portfolio_items_path, class: "text-white" %>
+                            <%#= link_to "Portfolio", portfolio_items_path, class: "text-white" %>
                         </li>
+                    -->
                         <li>
                             <%= login_helper 'text-white' %>
                         </li>

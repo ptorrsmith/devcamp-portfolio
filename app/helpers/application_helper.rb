@@ -13,21 +13,17 @@ module ApplicationHelper
     def login_helper style = '', tag='span'
         # this is a temp hack as GuestUser inherits from User
         if current_user.is_a?(GuestUser)
-            (
-            "<#{tag}>" +
-            (link_to "Register", new_user_registration_path, class: style) + 
-            "</#{tag}>" + 
-            "<#{tag}>" +
-            (link_to "Log in", new_user_session_path, class: style) +
-            "</#{tag}>"
-            ).html_safe
+login_links = <<LINK
+<#{tag}>#{link_to "Register", new_user_registration_path, class: "#{style} #{nav_link_active? new_user_registration_path}"}</#{tag}>
+<#{tag}>#{link_to "Log in", new_user_session_path, class: "#{style} #{nav_link_active? new_user_session_path}"}</#{tag}>
+LINK
         else
-            (
-            "<#{tag}>" +
-            (link_to "Log out", destroy_user_session_path, method: :delete, class: style) +
-            "</#{tag}>"
-            ).html_safe
+            login_links = "<#{tag}>" +
+                (link_to "Log out", destroy_user_session_path, method: :delete, class: style) +
+                "</#{tag}>"
         end
+
+        login_links.html_safe
     end
 
 
@@ -78,14 +74,18 @@ module ApplicationHelper
         # so string interpolation and normal double quotes are allowed
         # Contents must be butted to very left
 nav = <<NAV
-<#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
-<#{tag_type}><a href="#{about_me_path}" class="#{style}">About</a></#{tag_type}>
-<#{tag_type}><a href="#{contact_path}" class="#{style}">Contact</a></#{tag_type}>
-<#{tag_type}><a href="#{portfolio_items_path}" class="#{style}">Portfolio</a></#{tag_type}>
-<#{tag_type}><a href="#{blogs_path}" class="#{style}">Blogs</a></#{tag_type}>
+<#{tag_type}><a href="#{root_path}" class="#{style} #{nav_link_active? root_path}">Home</a></#{tag_type}>
+<#{tag_type}><a href="#{about_me_path}" class="#{style} #{nav_link_active? about_me_path}">About</a></#{tag_type}>
+<#{tag_type}><a href="#{contact_path}" class="#{style} #{nav_link_active? contact_path}">Contact</a></#{tag_type}>
+<#{tag_type}><a href="#{portfolio_items_path}" class="#{style} #{nav_link_active? portfolio_items_path}">Portfolio</a></#{tag_type}>
+<#{tag_type}><a href="#{blogs_path}" class="#{style} #{nav_link_active? blogs_path}">Blogs</a></#{tag_type}>
 NAV
 
         nav.html_safe
+    end
+
+    def nav_link_active? path
+        "active" if current_page? path
     end
 
 

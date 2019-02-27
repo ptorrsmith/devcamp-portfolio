@@ -46,6 +46,7 @@ class PortfolioItemsController < ApplicationController
     end
 
     def index
+        @page_title = 'Peter Torr Smith - Portfolio'
         # @portfolio_items = PortfolioItem.all
         # # this is called a  "scope", refining the default data set
         # @portfolio_items = PortfolioItem.order('position ASC')
@@ -90,6 +91,7 @@ class PortfolioItemsController < ApplicationController
     end
 
     def show
+        @page_title = 'Peter Torr Smith - ' + @portfolio_item.title
 # binding.pry
     end
 

@@ -24,14 +24,14 @@ class BlogsController < ApplicationController
     # puts "*" * 100
     # puts @blogs.inspect
     # puts "/" * 100
-    @page_title = 'Blogs!'
+    @page_title = 'Peter Torr Smith - Blogs'
     # binding.pry
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @page_title = @blog.title
+    @page_title = 'Peter Torr Smith - ' + @blog.title
     @seo_keywords = @blog.body  # not good content. create a keywords field on the blog model.
   end
 

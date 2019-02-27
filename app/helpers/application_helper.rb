@@ -10,15 +10,20 @@ module ApplicationHelper
         content_tag :div, "my content", class: "my-class"
     end
 
-    def login_helper style = ''
+    def login_helper style = '', tag='span'
         # this is a temp hack as GuestUser inherits from User
         if current_user.is_a?(GuestUser)
-            (link_to "Register", new_user_registration_path, class: style) + 
-            ' '.html_safe + 
-            (link_to "Log in", new_user_session_path, class: style)
+login_links = <<LINK
+<#{tag}>#{link_to "Register", new_user_registration_path, class: "#{style} #{nav_link_active? new_user_registration_path}"}</#{tag}>
+<#{tag}>#{link_to "Log in", new_user_session_path, class: "#{style} #{nav_link_active? new_user_session_path}"}</#{tag}>
+LINK
         else
-            link_to "Log out", destroy_user_session_path, method: :delete, class: style
+            login_links = "<#{tag}>" +
+                (link_to "Log out", destroy_user_session_path, method: :delete, class: style) +
+                "</#{tag}>"
         end
+
+        login_links.html_safe
     end
 
 
@@ -64,6 +69,63 @@ module ApplicationHelper
     end
 
 
+    def nav_items
+        [
+            {
+                title: 'Home',
+                path: root_path
+            },
+            {
+                title: 'About',
+                path: about_me_path
+            },
+            {
+                title: 'Contact',
+                path: contact_path
+            },
+            {
+                title: 'Portfolio',
+                path: portfolio_items_path
+            },
+            {
+                title: 'Blogs',
+                path: blogs_path
+            },
+            
+        ]
+    end
+
+    # rebuild of nav_helper to make it driven by the above nav_items array of hashes
+    def nav_helper style, tag_type='span'
+        nav = ''
+        nav_items.each do | item |
+            nav << "<#{tag_type}><a href='#{item[:path]}' class='#{style} #{nav_link_active? item[:path]}'>#{item[:title]}</a></#{tag_type}>"
+        end
+
+        nav.html_safe
+    end
+
+    
+    def nav_link_active? path
+        "active" if current_page? path
+    end
+
+    # first approach for nav_helper, using the 'heredoc' approach
+    def nav_helper_heredoc_approach_not_used_anymore style, tag_type='span'
+        # this is a "here/hear doc"... to allow multi-line strings to be generated
+        # <<NAV   NAV are like giant double quotes
+        # so string interpolation and normal double quotes are allowed
+        # Contents must be butted to very left
+nav = <<NAV        
+<#{tag_type}><a href="#{root_path}" class="#{style} #{nav_link_active? root_path}">Home</a></#{tag_type}>
+<#{tag_type}><a href="#{about_me_path}" class="#{style} #{nav_link_active? about_me_path}">About</a></#{tag_type}>
+<#{tag_type}><a href="#{contact_path}" class="#{style} #{nav_link_active? contact_path}">Contact</a></#{tag_type}>
+<#{tag_type}><a href="#{portfolio_items_path}" class="#{style} #{nav_link_active? portfolio_items_path}">Portfolio</a></#{tag_type}>
+<#{tag_type}><a href="#{blogs_path}" class="#{style} #{nav_link_active? blogs_path}">Blogs</a></#{tag_type}>
+NAV
+
+        nav.html_safe
+    end    
 
 
 

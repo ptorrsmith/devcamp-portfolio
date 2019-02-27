@@ -154,7 +154,8 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   // background: image-url('Cover_Tulips_BG_IMG_20180923_115741.jpg') no-repeat;
-  background: image-url('princes_bay_IMG_20190125_204028-ANIMATION.gif') no-repeat;
+  // background: image-url('princes_bay_IMG_20190125_204028-ANIMATION.gif') no-repeat;
+  background: image-url('video_start.png') no-repeat;
   background-size: cover;
 }
 
@@ -169,4 +170,9 @@ body {
 // to override gritter notification backgroun
 .gritter-item.gritter-css3 {
   background: seagreen;
+}
+
+.app-nav span {
+  margin-left: 10px;
+  // margin-right: 15px;
 }

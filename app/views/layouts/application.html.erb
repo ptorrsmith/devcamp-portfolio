@@ -7,7 +7,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <link rel="icon" href="/assets/favicon.ico">
+  <!-- <link rel="icon" href="/assets/favicon.ico"> -->
+  <%= favicon_link_tag asset_path('favicon-96x96.png') %>
 
 
   <title>
@@ -45,11 +46,11 @@
     <!-- <div id="background"></div> -->
 
     <%= video_tag(
-      'pts_portfolio_bkgd_cover_vid_dark_smaller.mp4',
+      ['pts_portfolio_bkgd_cover_vid_dark_smaller.mp4', 'pts_portfolio_bkgd_cover_vid_dark_smaller.webm'],
       id: 'background',
       autoplay: true,
       loop: true,
-      # muted: true,
+      muted: true,
       poster: 'video_start.png'
     ) %>
 

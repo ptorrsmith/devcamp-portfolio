@@ -5,7 +5,7 @@ class Blog < ApplicationRecord
     
     validates_presence_of :title, :body
 
-    # belongs_to :topic
+    belongs_to :topic
 
     # this is a scope
     def self.special_blogs

@@ -35,5 +35,7 @@ module DevcampPortfolio
 
     # Do not do this, use white listing.  This was just for demo of how it can be turned off.
     # config.action_controller.permit_all_parameters = true
+
+    config.eager_load_paths << "#{Rails.root}/lib"
   end
 end

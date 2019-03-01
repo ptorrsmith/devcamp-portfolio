@@ -1,12 +1,12 @@
 <main role="main" class="inner cover">
-    <h1 class="cover-heading">Recent #rails tweets</h1>
+    <h1 class="cover-heading">Recent #rubyonrails tweets</h1>
     <div class="row">
 
         <% @tweets.each do | tweet | %>
         <div class="col-md-6">
             <div class="tech-news">
                 <div class="card">
-                    <%= tweet %>
+                    <%= twitter_parser(tweet).html_safe %>
                 </div>
             </div>
         </div>

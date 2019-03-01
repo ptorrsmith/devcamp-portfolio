@@ -84,6 +84,9 @@ body {
   border-bottom-color: #fff;
 }
 
+
+// should have a media query for cover-container ??
+
 @media (min-width: 48em) {
   .masthead-brand {
     float: left;
@@ -175,4 +178,17 @@ body {
 .app-nav span {
   margin-left: 10px;
   // margin-right: 15px;
+}
+
+.tech-news {
+  color: black;
+  margin: 10px;
+}
+
+.tech-news a {
+  color: green;
+}
+
+.tech-news>.card {
+  padding: 30px;
 }

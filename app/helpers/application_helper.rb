@@ -84,6 +84,10 @@ LINK
                 path: contact_path
             },
             {
+                title: 'Rails News',
+                path: tech_news_path
+            },
+            {
                 title: 'Portfolio',
                 path: portfolio_items_path
             },

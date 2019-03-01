@@ -10,6 +10,7 @@ class PortfolioItem < ApplicationRecord
     validates_presence_of :title, :body # due to move to carrierwave uploader (and remove image management out of the model, into a helper)
     
     # this says how to manage (interpret) and present the thumb and main image... as a PortfolioItemUploder object.
+    # our uploader is in the lib directory, so we need to mount it as the control for our thumb and main image fields
     mount_uploader :thumb_image, PortfolioItemUploader
     mount_uploader :main_image, PortfolioItemUploader
     

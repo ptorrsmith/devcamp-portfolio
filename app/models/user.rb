@@ -15,6 +15,9 @@ class User < ApplicationRecord
 
   validates_presence_of :name
 
+  # dependent: :destroy will remove user comments when user record destroyed.
+  has_many :comments, dependent: :destroy
+
   def first_names
     # if self.name.split.length > 2
     #   self.name.split.first # split into array by space

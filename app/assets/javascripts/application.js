@@ -27,10 +27,11 @@
 //= require popper
 //= require cocoon
 //= require gritter
+//= require cable
 
 // apparently good to have turbolinks load near end to avoid some problems ?? 
 //= require turbolinks
-//= require activestorage
+// require activestorage
 
 // next line gets all other .js in this folder ??  // so should bring in our html5sortable.js source.  Which it now appears to do, so hence commented out above
 //= require_tree .

@@ -5,7 +5,11 @@ class Blog < ApplicationRecord
     
     validates_presence_of :title, :body
 
+    # TODO: fix blog/topic relationship
     belongs_to :topic
+
+  # dependent: :destroy will remove blog comments when blog record destroyed.
+  has_many :comments, dependent: :destroy
 
     # this is a scope
     def self.special_blogs

@@ -15,6 +15,32 @@
     <%= @blog.body %>
 
   </p>
+
+  <!-- start of comment form, for logged-in users only -->
+
+  <% unless current_user.is_a? GuestUser %>
+  <!-- not using form_for with default of local submit, now form_with, which defaults to remote submit, so no need to set local: false or remote: true -->
+  <%#= form_for @comment, url: '#' do | form | %>
+  <!-- note: must specify model: model/@model objects -->
+  <%= form_with(model: @comment) do | form | %>
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: 'form-control' %>
+  </div>
+
+  <%= form.submit 'Post your comment', class: 'btn btn-primary' %>
+
+  <% end %>
+
+  <% end %>
+
+  <!-- end comment form -->
+
+  <!-- start of existing comments show -->
+  <!-- will look for partial called _comments by default, in the comments views folder (actually, anywhere in views folders) -->
+  <%= render @blog.comments %>
+  <!-- end of comments show -->
+
 </div><!-- /.blog-main -->
 
 <!-- <%#= link_to 'Back', blogs_path %> -->

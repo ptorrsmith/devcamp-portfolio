@@ -3,9 +3,13 @@
 //
 //= require action_cable
 //= require_self
+
+// this brings in the channels
 //= require_tree ./channels
 
-(function() {
+
+// js starting with parenthesis '(' means it's an immediately invoked function.
+(function () {
   this.App || (this.App = {});
 
   App.cable = ActionCable.createConsumer();

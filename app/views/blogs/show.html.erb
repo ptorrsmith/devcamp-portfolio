@@ -15,6 +15,19 @@
     <%= @blog.body %>
 
   </p>
+
+  <!-- start of comment form, for logged-in users only -->
+
+  <%= render 'comments/comment_form' %>
+  <!-- end comment form -->
+
+  <!-- start of existing comments show -->
+  <!-- will look for partial called _comments by default, in the comments views folder (actually, anywhere in views folders) -->
+  <div id="comments" data-blog-id="<%=@blog.id%>">
+    <%= render @blog.comments %>
+  </div>
+  <!-- end of comments show -->
+
 </div><!-- /.blog-main -->
 
 <!-- <%#= link_to 'Back', blogs_path %> -->

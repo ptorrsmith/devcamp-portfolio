@@ -28,8 +28,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -58,7 +61,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 # gem 'bootstrap', '4.0.0.alpha6'
-gem 'bootstrap', '~> 4.2.1'
+# gem 'bootstrap', '~> 4.2.1' # this had security vulnerability, got warning via github :-)
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 
 # normally don't publish all gems to rebygems.org unless want to share
 # 

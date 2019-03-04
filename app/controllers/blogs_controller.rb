@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  # before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_blog, only: [:edit, :update, :destroy, :toggle_status]
   # layout 'blog'  # only needed if layout file different from controller/route
   # i.e. the layout file is blogs.html.erb in layouts folder, so automatically used
   # but if named blog.html.erb, would need the layout 'blog' declaration above
@@ -31,8 +32,14 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    # set blog sets the current blog
+    # however for perf reasons, will override this to bring in comments more effectively
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
     @page_title = 'Peter Torr Smith - ' + @blog.title
     @seo_keywords = @blog.body  # not good content. create a keywords field on the blog model.
+
+    # need blank new comment for form
+    @comment = Comment.new
   end
 
   # GET /blogs/new

@@ -61,7 +61,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 # gem 'bootstrap', '4.0.0.alpha6'
-gem 'bootstrap', '~> 4.2.1'
+# gem 'bootstrap', '~> 4.2.1' # this had security vulnerability, got warning via github :-)
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 
 # normally don't publish all gems to rebygems.org unless want to share
 # 

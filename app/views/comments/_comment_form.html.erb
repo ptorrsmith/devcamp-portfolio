@@ -2,7 +2,7 @@
 <!-- not using form_for with default of local submit, now form_with, which defaults to remote submit, so no need to set local: false or remote: true -->
 <%#= form_for @comment, url: '#' do | form | %>
 <!-- note: must specify model: model/@model objects -->
-<%= form_with(model: @comment) do | form | %>
+<%= form_with(model: @comment, id: 'new_comment', local: true) do | form | %>
 <div class="form-group">
     <%= form.label :content %>
     <%= form.text_area :content, class: 'form-control' %>

@@ -11,7 +11,7 @@ jQuery(document).on 'turbolinks:load', ->
             comments.append data['comment']
         send_comment: (comment, blog_id) ->
         # @perform is a special action cable variable
-            @perform 'send_comment', comment: comment, blog_id
+            @perform 'send_comment', comment: comment, blog_id: blog_id
     $('#new_comment').submit (e) ->
         $this = $(this) # instance of this event so we can work with its data
         textarea = $this.find('#comment_content')

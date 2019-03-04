@@ -7,4 +7,9 @@ class Comment < ApplicationRecord
 
   # min and max is characters
   validates :content, presence: true, length: {minimum:5, maximum:1000}
+
+    # callback. Why not after_save ??? or if .save!
+    after_create_commit {
+        CommentBroadcastJob.perform_later(self) # queues this for asynch action... queues in redis no-sql db / name: value document store
+    }
 end

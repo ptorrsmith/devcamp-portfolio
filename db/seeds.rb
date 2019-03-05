@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 3.times do |i|
     Topic.create!(
-        title: "Topic ##{i}"
+        title: "Topic ##{i+1}"
     )
 end
 

@@ -1,3 +1,7 @@
-<div class="topic-list">
+<div class="topic-list-item">
   <%= link_to topic.title, topic_path(topic) %>
+
+  <span class="smaller-text">
+    <%= "(#{pluralize(topic.blogs.published.count, 'blog')})" %>
+  </span>
 </div>

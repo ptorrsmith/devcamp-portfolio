@@ -25,7 +25,7 @@
 
   <% link_text = "... #{blog.body.split.size} words, #{blog.body.squeeze('.!?').count('.!?')} sentences" %>
   <p>
-    <%= blog.body.truncate_words(40, omission: "<span class='read-more-link'>#{link_to link_text, blog}</span>").html_safe %>
+    <%= blog.body.truncate_words(40, omission: "<span class='smaller-text'>#{link_to link_text, blog}</span>").html_safe %>
   </p>
 
 </div><!-- /.blog-post -->

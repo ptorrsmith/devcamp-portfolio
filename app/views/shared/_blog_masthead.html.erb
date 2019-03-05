@@ -6,9 +6,14 @@
         </h1>
         <p class="lead blog-description">What's going down :-)</p>
         <% if logged_in?(:site_admin)%>
-        <%= link_to 'Create a new Blog', new_blog_path%> |
+        <span class="masthead-link">
+            <%= link_to 'Create a new Blog', new_blog_path, class: 'btn-sm btn-secondary'%> |
+        </span>
         <% end %>
-        <%= link_to "topics list", topics_path %>
+        <span class="masthead-link">
+
+            <%= link_to "topics list", topics_path %>
+        </span>
     </div>
 </div>
 <!-- end blog header -->

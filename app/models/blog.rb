@@ -3,9 +3,9 @@ class Blog < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
     
-    validates_presence_of :title, :body
+    validates_presence_of :title, :body, :topic_id
 
-    # TODO: fix blog/topic relationship
+    # TODO: fix blog/topic relationship, as seems to imply topic is required (gives error)
     belongs_to :topic
 
   # dependent: :destroy will remove blog comments when blog record destroyed.

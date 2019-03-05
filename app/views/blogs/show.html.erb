@@ -10,6 +10,10 @@
   <h2>
     <%= @blog.title %>
   </h2>
+  <p class="blog-topic">
+    Topic:
+    <%= @blog.topic.title %>
+  </p>
 
   <p class="blog-post-meta">Published
     <%= distance_of_time_in_words(@blog.created_at, Time.now)%> ago

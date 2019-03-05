@@ -21,6 +21,14 @@
             <li><a href="#">April 2013</a></li>
         </ol>
     </div> -->
+
+    <div class="sidebard_module">
+        <% @sidebar_topics.each do |topic| %>
+        <div class="sidebar-topic-link">
+            <%= link_to topic.title, topic_path(topic) %>
+        </div>
+        <% end %>
+    </div>
     <div class="sidebar-module">
         <h4>Elsewhere</h4>
         <ol class="list-unstyled social-links">

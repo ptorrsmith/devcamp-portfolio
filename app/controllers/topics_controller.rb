@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  
+  before_action :set_sidebard_topics
 
   layout 'blogs'
 
@@ -32,6 +34,10 @@ class TopicsController < ApplicationController
 
   def topics_params
     # todo
+  end
+
+  def set_sidebard_topics
+    @sidebar_topics = Topic.with_blogs
   end
 
 end

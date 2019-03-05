@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   # before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_blog, only: [:edit, :update, :destroy, :toggle_status]
+  before_action :set_sidebard_topics, except: [:create, :update, :destroy, :toggle_status]
   # layout 'blog'  # only needed if layout file different from controller/route
   # i.e. the layout file is blogs.html.erb in layouts folder, so automatically used
   # but if named blog.html.erb, would need the layout 'blog' declaration above
@@ -126,4 +127,11 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :body, :topic_id)
     end
+
+    # could refactor this and the duplication in the topics controller (method and before action) into a concern
+    # though the exceptions are a bit different.
+    def set_sidebard_topics
+      @sidebar_topics = Topic.with_blogs
+    end
+  
 end

@@ -3,10 +3,11 @@ class Blog < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
     
-    validates_presence_of :title, :body, :topic_id
+    validates_presence_of :title, :body
+    validates_presence_of :topic_id, message: 'Please select a topic'
 
     # TODO: fix blog/topic relationship, as seems to imply topic is required (gives error)
-    belongs_to :topic
+    belongs_to :topic  #, optional: true # this causes a double error, on this and on the validation :-(
 
   # dependent: :destroy will remove blog comments when blog record destroyed.
   has_many :comments, dependent: :destroy

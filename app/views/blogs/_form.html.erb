@@ -29,7 +29,7 @@
   <%= form.label :topic_id %>
   <%= form.collection_select(:topic_id, Topic.all, :id, :title, 
       {
-        selected: blog.topic.id, # not needed as works without it if topic exist, but with this line, it fails if no topic yet (such as select blank, or new blog form)
+        # selected: blog.topic.id, # not needed as works without it if topic exist, but with this line, it fails if no topic yet (such as select blank, or new blog form)
         include_blank: true,
       },
       class: 'form-control'

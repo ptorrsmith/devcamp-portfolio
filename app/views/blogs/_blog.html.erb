@@ -3,8 +3,14 @@
   <h2 class="blog-post-title">
     <%= link_to blog.title.upcase, blog %>
   </h2>
+  <p class="blog-topic">
+    Topic:
+    <%= link_to blog.topic.title, blog.topic %>
+
+  </p>
   <p class="blog-post-meta">Published
     <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago</p>
+
 
   <% if logged_in?(:site_admin) %>
 
@@ -17,8 +23,9 @@
 
   </p>
 
+  <% link_text = "... #{blog.body.split.size} words, #{blog.body.squeeze('.!?').count('.!?')} sentences" %>
   <p>
-    <%= blog.body %>
+    <%= blog.body.truncate_words(40, omission: "<span class='read-more-link'>#{link_to link_text, blog}</span>").html_safe %>
   </p>
 
 </div><!-- /.blog-post -->

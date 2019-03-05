@@ -22,11 +22,13 @@
     <%= distance_of_time_in_words(@blog.updated_at, Time.now)%> ago)
     <% end %>
   </p>
+  <% if logged_in?(:site_admin) %>
   <p class="blog-post-meta">Status:
-    <%= link_to @blog.status, toggle_status_blog_path(@blog) if logged_in?(:site_admin) %> /
-    <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> /
-    <%= link_to 'Destroy', @blog, method: :delete, data: { confirm: 'Are you sure?' }  if logged_in?(:site_admin) %>
+    <%= link_to @blog.status, toggle_status_blog_path(@blog) %> /
+    <%= link_to 'Edit', edit_blog_path(@blog) %> /
+    <%= link_to 'Destroy', @blog, method: :delete, data: { confirm: 'Are you sure?' }  %>
   </p>
+  <% end %>
 
   <%#= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
   <p>

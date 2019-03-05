@@ -4,7 +4,7 @@
 <!-- note: must specify model: model/@model objects -->
 <%= form_with(model: @comment, url: '#', id: 'new_comment', local: true) do | form | %>
 <div class="form-group">
-    <%= form.label :content %>
+    <%= form.label :content, 'add a comment...' %>
     <%= form.text_area :content, class: 'form-control' %>
 </div>
 

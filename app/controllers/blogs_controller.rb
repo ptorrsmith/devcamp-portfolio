@@ -38,14 +38,20 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    # only show draft to admins
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    if logged_in?(:site_admin) || @blog.published?
     # set blog sets the current blog
     # however for perf reasons, will override this to bring in comments more effectively
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
     @page_title = 'Peter Torr Smith - ' + @blog.title
     @seo_keywords = @blog.body  # not good content. create a keywords field on the blog model.
 
     # need blank new comment for form
     @comment = Comment.new
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
+
   end
 
   # GET /blogs/new

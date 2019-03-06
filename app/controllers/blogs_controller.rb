@@ -131,7 +131,8 @@ class BlogsController < ApplicationController
     # could refactor this and the duplication in the topics controller (method and before action) into a concern
     # though the exceptions are a bit different.
     def set_sidebard_topics
-      @sidebar_topics = Topic.with_published_blogs
+      # @sidebar_topics = Topic.with_published_blogs
+      @sidebar_topics = Topic.with_blogs
     end
   
 end

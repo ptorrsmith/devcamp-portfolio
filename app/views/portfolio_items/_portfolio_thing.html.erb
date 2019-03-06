@@ -14,7 +14,7 @@
             <p class="card-text">
                 <span>
                     <%#= link_to "{#{portfolio_thing.id}} [#{portfolio_thing.position || '--'}] ".html_safe + portfolio_thing.title, portfolio_item_show_path(portfolio_thing)%>
-                    <%= link_to "{#{portfolio_thing.id}} [#{portfolio_thing.position || '--'}] ".html_safe + portfolio_thing.title, portfolio_thing%>
+                    <%= link_to portfolio_thing.title, portfolio_thing%>
                 </span>
                 <%=portfolio_thing.subtitle%>
             </p>

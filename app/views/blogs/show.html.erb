@@ -11,8 +11,25 @@
     <%= @blog.title %>
   </h2>
   <p class="blog-topic">
-    Topic:
-    <%= @blog.topic.title %>
+    <!-- Topic: -->
+    <%#= @blog.topic.title %>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <!-- <a href="#">Home</a> -->
+          <%= link_to 'home', root_path %>
+        </li>
+        <li class="breadcrumb-item">
+          <%= link_to 'blogs', blogs_path %>
+        </li>
+        <li class="breadcrumb-item">
+          <%= link_to @blog.topic.title, topic_path(@blog.topic) %>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <%= @blog.title %>
+        </li>
+      </ol>
+    </nav>
   </p>
 
   <p class="blog-post-meta">Published
@@ -21,14 +38,16 @@
     (updated
     <%= distance_of_time_in_words(@blog.updated_at, Time.now)%> ago)
     <% end %>
+    <% if logged_in?(:site_admin) %>
+    <span class="float-right">
+      <%= render partial: 'blogs/admin_actions', locals: {blog: @blog } %>
+    </span>
+    <% end %>
+
   </p>
-  <% if logged_in?(:site_admin) %>
-  <p class="blog-post-meta">Status:
-    <%= link_to @blog.status, toggle_status_blog_path(@blog) %> /
-    <%= link_to 'Edit', edit_blog_path(@blog) %> /
-    <%= link_to 'Destroy', @blog, method: :delete, data: { confirm: 'Are you sure?' }  %>
-  </p>
-  <% end %>
+  <!-- <p class="blog-post-meta">Status:
+    /
+  </p> -->
 
   <%#= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
   <p>

@@ -19,7 +19,6 @@
 // Have set explicity order for load here
 
 //= require jquery3    
-//= require bootstrap-sprockets    
 //= require bootstrap    
 //= require rails-ujs
 //= require jquery-ui
@@ -35,3 +34,4 @@
 
 // next line gets all other .js in this folder ??  // so should bring in our html5sortable.js source.  Which it now appears to do, so hence commented out above
 //= require_tree .
+//= require bootstrap-sprockets

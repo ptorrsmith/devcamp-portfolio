@@ -1,7 +1,7 @@
 <div class="blog-post">
 
   <h2 class="blog-post-title">
-    <%= link_to blog.title.upcase, blog %>
+    <%= link_to blog.title, blog %>
   </h2>
   <p class="blog-topic">
     Topic:
@@ -23,9 +23,9 @@
 
   </p>
 
-  <% link_text = "... #{blog.body.split.size} words, #{blog.body.squeeze('.!?').count('.!?')} sentences" %>
+  <% link_text = "...more (#{blog.body.split.size} words, #{blog.body.squeeze('.!?').count('.!?')} sentences)" %>
   <p>
-    <%= blog.body.truncate_words(40, omission: "<span class='smaller-text'>#{link_to link_text, blog}</span>").html_safe %>
+    <%= (markdown blog.body).truncate_words(40, omission: "<span class='smaller-text'>#{link_to link_text, blog}</span>").html_safe %>
   </p>
 
 </div><!-- /.blog-post -->

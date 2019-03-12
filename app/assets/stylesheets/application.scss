@@ -185,9 +185,9 @@ body {
   margin: 10px;
 }
 
-.tech-news a {
-  color: green;
-}
+// .tech-news a {
+//   color: green;
+// }
 
 .tech-news>.card {
   padding: 30px;
@@ -198,9 +198,13 @@ body {
   text-align: left;
 }
 
-.app-card-container .card {
+.app-card-container>.card {
   padding: 30px;
   opacity: 10%;
+}
+
+.card a {
+  color: lightseagreen;
 }
 
 .card-block {

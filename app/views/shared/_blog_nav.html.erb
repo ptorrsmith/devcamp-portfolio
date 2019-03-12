@@ -1,20 +1,55 @@
-<!-- Start blog nav -->
-<div class="blog-masthead">
+<nav class="navbar navbar-expand-md navbar-light bg-light blog-nav">
     <div class="container">
-        <nav class="nav blog-nav">
+        <%= link_to "Peter Torr Smith", root_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- from bootstrap example -->
-            <!-- 
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ol class="navbar-nav mr-auto">
+                <%= nav_helper 'nav-link', 'li' %>
+                <%= login_helper 'nav-link' %>
+            </ol>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<%#= nav_helper 'nav-link', 'span' %>
+
+<%#= login_helper 'nav-link' %>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start blog nav -->
+<!-- <div class="blog-masthead">
+    <div class="container">
+        <nav class="nav blog-nav"> -->
+
+<!-- from bootstrap example -->
+<!-- 
             <a class="nav-link active" href="#">New features</a>
             <a class="nav-link" href="#">Press</a>
             <a class="nav-link" href="#">New hires</a>
             <a class="nav-link" href="#">About</a> 
             -->
 
-            <%= nav_helper 'nav-link', 'span' %>
+<%#= nav_helper 'nav-link', 'span' %>
 
-            <!-- nav moved to helper -->
-            <!-- 
+<!-- nav moved to helper -->
+<!-- 
             <%#= link_to "Home", root_path, class: "nav-link" %>
             <%#= link_to "About", about_me_path, class: "nav-link" %>
             <%#= link_to "Contact", contact_path, class: "nav-link" %>
@@ -22,8 +57,8 @@
             <%#= link_to "Portfolio", portfolio_items_path, class: "nav-link" %>
             -->
 
-            <%= login_helper 'nav-link' %>
-        </nav>
+<%#= login_helper 'nav-link' %>
+<!-- </nav>
     </div>
-</div>
+</div> -->
 <!-- end blog nav -->

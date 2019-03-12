@@ -33,6 +33,7 @@
     <%= render 'shared/portfolio_masthead'  %>
 
     <%# puts params %>
+
     <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
 
     <!-- <p class="notice">
@@ -42,6 +43,7 @@
       <%#= alert %>
     </p> -->
 
+    <%= source_helper 'alert alert-info container', 'alert-link' %>
 
     <%= yield %>
 

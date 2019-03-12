@@ -32,12 +32,12 @@
     <div class="site-wraper-inner"> -->
 
 
-  <p class="notice">
+  <!-- <p class="notice">
     <%#= notice %>
   </p>
   <p class="alert">
     <%#= alert %>
-  </p>
+  </p> -->
 
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -58,13 +58,14 @@
     <%= render 'shared/application_nav'%>
 
     <!-- <hr /> -->
+    <%= source_helper 'alert alert-success', 'alert-link' %>
 
     <%= yield %>
     <%#= @copyright %>
 
     <%= render 'shared/application_footer' %>
 
-    <%= source_helper %>
+    <%#= source_helper %>
 
     <!-- as renders js, best render at end -->
     <%#= render 'shared/alerts' %>

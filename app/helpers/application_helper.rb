@@ -28,10 +28,13 @@ LINK
 
 
     # TODO Layout name???
-    def source_helper(layout_name = 'application')
+    # def source_helper(layout_name = 'application')
+    def source_helper(styles="", link_style="")
         if session[:source]
-            greeting = "Thanks, you came from #{session[:source]}, and you are on the #{layout_name} layout"
-            content_tag(:p, greeting, class: "source-greeting")
+            greeting = "Thanks, you came from #{session[:source]}, please feel free to #{link_to "contact me", contact_path, class: link_style} if you'd like to work together."
+            # content_tag(:p, greeting, class: "source-greeting")
+            session.delete(:source) # because it get's very annoying to see the banner all the time.  Could've persisted this to a db as well.
+            content_tag(:div, greeting.html_safe, class: styles)
         end
     end 
 
@@ -69,7 +72,7 @@ LINK
     end
 
 
-    def nav_items
+    def nav_items # for our nav_helper below
         [
             {
                 title: 'Home',
@@ -111,6 +114,9 @@ LINK
 
     
     def nav_link_active? path
+        
+        # binding.pry
+        
         "active" if current_page? path
     end
 

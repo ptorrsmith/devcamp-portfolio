@@ -42,29 +42,29 @@ puts "5 test skills created"
     )
     end
 
-puts "8 Portfolio Items (Rails) created"
+    puts "8 Portfolio Items (Rails) created"
 
-3.times.do |i|
-    Role.create!(
-        roles: "Roles/Job #{i + 1} (id=#{i}",
+
+    8.times do |i| 
+        Role.create!(
+        roles: "Portfolio Item number #{i + 1}",
         organisation: "Organisation for role #{i+1}",
-        location: "location for role #{i+1}"
-        from: 2000 + i,
-        to: 2000 + i + 1,
+        location: "location for role #{i+1}",
+        from: Date.new(2000 + i ,1,1),
+        to: Date.new(2001 + i,1,1),
         description: "Description from role #{i+1}",
-        highlights: "Highlights for role #{i+1}"
-    )
-    end
-
-3.times.do |i|
-    Qualification.create!(
-        title: "Role/Job #{i + 1}",
-        institution: "Institution for role #{i+1}",
-        year_obtained: 2000 + i,
-        description: "Description from role #{i+1}"
-    )
-    end
-
+        highlights: "Highlights for role #{i+1}"  
+        )
+        end
+    
+        10.times do |i| 
+            Qualification.create!(
+                title: "Qual #{i+1}",
+                institution: "Institution for Qual #{i+1}",
+                year_obtained: "#{i+2001}",
+                description: "Description for Qual #{i+1}",
+            )
+            end
 
 PortfolioItem.create!(
     title: "Portfolio Item number #1",

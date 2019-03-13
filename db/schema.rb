@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_031204) do
     t.date "to"
     t.text "roles"
     t.text "description"
-    t.text "hightlights"
+    t.text "highlights"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "current"

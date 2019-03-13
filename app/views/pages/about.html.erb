@@ -101,8 +101,8 @@
                     <% @qualificaitons.each do |qual| %>
                     <div class="card card-block qualification-card">
                         <h5>
-                            <%= qual.title %> (
-                            <%= qual.year_obtained %>)
+                            <%= qual.title %>
+                            <%= "(#{qual.year_obtained})"%>
                         </h5>
                         <h6>
                             <%= qual.institution %>

@@ -18,8 +18,15 @@
                             <%= skill.title %>
                         </h5>
                         <div class="progress">
+                            <span>Skill level </span>
                             <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="<%= skill.skill_level %>"
                                 aria-valuemax="100" style="width: <%= skill.skill_level * 10 %>%;" title="<%=skill.skill_level%> out of 10">
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span>Current Focus</span>
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" aria-valuenow="<%= skill.percent_utilized %>"
+                                aria-valuemax="100" style="width: <%= skill.percent_utilized %>%;" title="<%=skill.percent_utilized%>% of my time">
                             </div>
                         </div>
 

@@ -66,11 +66,16 @@
                     that
                     business. I'd love to explore business opportunities with you and see what great things we can make
                     happen</p>
+
                 <p>
+                    <% if @roles.count > 0 %>
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#jobHistory"
                         aria-expanded="false" aria-controls="jobHistory">Work History and roles</button>
+                    <% end %>
+                    <% if @qualificaitons.count > 0 %>
                     <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#qualifications"
                         aria-expanded="false" aria-controls="qualifications">Qualifications</button>
+                    <% end %>
                 </p>
                 <div class="collapse" id="jobHistory">
                     <% @roles.each do |role| %>

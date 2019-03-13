@@ -10,21 +10,37 @@
                 <!-- image -->
                 <!-- <img src="/assets/Peter_20190121_202047.jpg" width="300"> -->
 
-                <%= image_tag 'Peter_20190121_202047.jpg', width: 235, alt: "Peter Torr Smith, a laugh on the beach :-)" %>
+                <%= image_tag 'Peter_20190121_202047.jpg', width: '100%', alt: "Peter Torr Smith, a laugh on the beach :-)" %>
+                <div class="skills">
+                    <% @skills.each do |skill| %>
+                    <div class="card skill">
+                        <h5>
+                            <%= skill.title %>
+                        </h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="<%= skill.skill_level %>"
+                                aria-valuemax="100" style="width: <%= skill.skill_level * 10 %>%;" title="<%=skill.skill_level%> out of 10">
+                            </div>
+                        </div>
+
+                    </div>
+                    <% end %>
+                </div>
             </div>
             <div class="col-md-8">
 
-                <p>I've been living in Wellington since 1993 and in that time have worked in IT, Government and
+                <p>I've been living in Wellington since 1993 and in that time have worked in IT deliver for
+                    private-sector, Government and
                     start-up
                     businesses in
-                    many different roles</p>
+                    many different roles. Prior to moving to Wellington I worked in Television and video primarily as a
+                    video editor.</p>
                 <p>I've recently finished several years working with the Ministry of Social Development working on IT
                     business
                     projects, programmes
-                    and portfolios of a wide range of services and applications. These have been mainly web
+                    and portfolios for a wide range of business services and applications. These have been mainly web
                     applications
-                    and
-                    for the last few years mobile web.</p>
+                    and, for the last few years, mobile web.</p>
                 <p>I had a great time doing the
                     <%= link_to 'Enspiral Dev Academy Bootcamp', 'https://devacademy.co.nz/', target: "_blank" %>
                     'Hihi' at
@@ -42,8 +58,8 @@
                     focus required of a modern useful online service</p>
                 <p>I love business, technology, governance, finance, food and fermentation, swimming, art, living in
                     Aro
-                    Valley, and
-                    spending time with my partner on our various projects and going on adventures :-)</p>
+                    Valley, my friends, and
+                    spending time with my partner on our various projects and adventures :-)</p>
                 <p>I enjoy getting in and helping make a business, team, technology and process work, and I like being
                     part
                     of

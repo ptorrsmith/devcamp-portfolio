@@ -25,7 +25,8 @@ puts "10 test blog posts created"
 5.times do |i| 
     Skill.create!(
         title: "Skill number #{i + 1}",
-        percent_utilized: 15
+        percent_utilized: 15,
+        skill_level: 5
     )
 end
 

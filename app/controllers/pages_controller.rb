@@ -2,11 +2,12 @@ class PagesController < ApplicationController
   def home
     @page_title = 'Peter Torr Smith - home'
     @blogs = Blog.all
-    @skills = Skill.all
+    # @skills = Skill.all
   end
 
   def about
     @page_title = 'Peter Torr Smith - about'
+    @skills = Skill.where('skill_level > 0')
   end
 
   def contact

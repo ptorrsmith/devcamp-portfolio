@@ -1,0 +1,45 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @role.organisation %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @role.location %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @role.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <% if @role.current %>
+  current
+  <% else %>
+  <%= @role.to %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Roles:</strong>
+  <%= @role.roles %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @role.description %>
+</p>
+
+<p>
+  <strong>Hightlights:</strong>
+  <%= @role.hightlights %>
+</p>
+
+<%= link_to 'Edit', edit_role_path(@role) %> |
+<%= link_to 'Back', roles_path %>

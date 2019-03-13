@@ -1,0 +1,65 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<h1>Roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organisation</th>
+      <th>Location</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Roles</th>
+      <th>Description</th>
+      <th>Hightlights</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles.each do |role| %>
+    <tr>
+      <td>
+        <%= role.organisation %>
+      </td>
+      <td>
+        <%= role.location %>
+      </td>
+      <td>
+        <%= role.from %>
+      </td>
+      <% if role.current %>
+      <td>current</td>
+      <% else %>
+      <td>
+        <%= role.to %>
+      </td>
+      <% end %>
+      <td>
+        <%= role.roles %>
+      </td>
+      <td>
+        <%= role.description %>
+      </td>
+      <td>
+        <%= role.hightlights %>
+      </td>
+      <td>
+        <%= link_to 'Show', role %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_role_path(role) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Role', new_role_path %>

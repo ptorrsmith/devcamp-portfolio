@@ -40,9 +40,31 @@ puts "5 test skills created"
         main_image: 'http://placehold.it/600x400',
         thumb_image: 'http://placehold.it/350x200'
     )
-end 
+    end
 
 puts "8 Portfolio Items (Rails) created"
+
+3.times.do |i|
+    Role.create!(
+        roles: "Roles/Job #{i + 1} (id=#{i}",
+        organisation: "Organisation for role #{i+1}",
+        location: "location for role #{i+1}"
+        from: 2000 + i,
+        to: 2000 + i + 1,
+        description: "Description from role #{i+1}",
+        highlights: "Highlights for role #{i+1}"
+    )
+    end
+
+3.times.do |i|
+    Qualification.create!(
+        title: "Role/Job #{i + 1}",
+        institution: "Institution for role #{i+1}",
+        year_obtained: 2000 + i,
+        description: "Description from role #{i+1}"
+    )
+    end
+
 
 PortfolioItem.create!(
     title: "Portfolio Item number #1",

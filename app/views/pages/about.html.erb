@@ -66,59 +66,50 @@
                     that
                     business. I'd love to explore business opportunities with you and see what great things we can make
                     happen</p>
-                <!-- <p>
+                <p>
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#jobHistory"
-                        aria-expanded="false" aria-controls="jobHistory">Job History</button>
+                        aria-expanded="false" aria-controls="jobHistory">Work History and roles</button>
                     <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#qualifications"
                         aria-expanded="false" aria-controls="qualifications">Qualifications</button>
                 </p>
-                <p>
-                    <div class="collapse" id="jobHistory">
-                        <div class="card card-block">
-                            Job current
-                        </div>
-                        <div class="card card-block">
-                            Job MSD 3
-                        </div>
-                        <div class="card card-block">
-                            Job MSD 2
-                        </div>
-                        <div class="card card-block">
-                            Job MSD 1
-                        </div>
-                        <div class="card card-block">
-                            Job Catalyst
-                        </div>
-                        <div class="card card-block">
-                            Job Hire Things
-                        </div>
-                        <div class="card card-block">
-                            Job Intergen
-                        </div>
-                        <div class="card card-block">
-                            Job Intergen
-                        </div>
-
+                <div class="collapse" id="jobHistory">
+                    <% @roles.each do |role| %>
+                    <div class="card card-block role-card">
+                        <h5>
+                            <%= role.organisation %>
+                        </h5>
+                        <h6>
+                            <%= role.roles %>
+                        </h6>
+                        <p>From:
+                            <%= role.from.year %>. To:
+                            <%= role.current? ? 'current': "#{role.to.year}" %>.
+                            <%#=role.to? role.to.year : 'current' %>
+                        </p>
+                        <p>
+                            <%=role.description %>
+                        </p>
                     </div>
-                </p>
-
-                <p>
-                    <div class="collapse" id="qualifications">
-                        <div class="card card-block">
-                            Qual recent
-                        </div>
-                        <div class="card card-block">
-                            qual 3
-                        </div>
-                        <div class="card card-block">
-                            qual 3
-                        </div>
-                        <div class="card card-block">
-                            qual 1
-                        </div>
-
+                    <% end %>
+                </div>
+                <div class="collapse" id="qualifications">
+                    <% @qualificaitons.each do |qual| %>
+                    <div class="card card-block qualification-card">
+                        <h5>
+                            <%= qual.title %> (
+                            <%= qual.year_obtained %>)
+                        </h5>
+                        <h6>
+                            <%= qual.institution %>
+                        </h6>
+                        <p>
+                            <%=qual.description %>
+                        </p>
                     </div>
-                </p> -->
+                    <% end %>
+
+
+                </div>
             </div>
         </div>
     </div>

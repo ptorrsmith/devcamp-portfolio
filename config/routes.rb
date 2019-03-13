@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :skills
   resources :roles
   resources :qualifications
   # get 'topics/index'

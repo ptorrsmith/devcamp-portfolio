@@ -77,18 +77,18 @@ PortfolioItem.create!(
 puts "1 Portfolio Items (Javascript) created"
 
 
-# 3.times do |i|
-#     Technology.create!(
-#         name: "Technology ##{i}",
-#         portfolio_item_id: PortfolioItem.last.id
-#     )
-# end
 
 3.times do |i|
     PortfolioItem.last.technologies.create!(
         name: "Technology ##{i}"
-    )
-end
-
+        )
+    end
+    
+    # 3.times do |i|
+    #     Technology.create!(
+    #         name: "Technology ##{i}",
+    #         portfolio_item_id: PortfolioItem.last.id
+    #     )
+    # end
 
 puts "3 technologies created"

@@ -65,12 +65,14 @@
                     It was very detailed, and the result of my efforts was this website, and
                     <%#= link_to 'a certificate', course_completion_path %>
                     <%#= link_to 'this certificate', '#',  data-toggle: "collapse", data-target: "#certificate" %>
+
+
+                    <!-- Collapse can have button or link options. Button uses  data-target="#certificate", whilst link uses  href="#certificate"  -->
+                    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#certificate"
+                        aria-expanded="false" aria-controls="certificate">this certificate</button> -->
                     <a class="" data-toggle="collapse" href="#certificate" aria-expanded="false" aria-controls="certificate">
                         this certificate ;-)
                     </a>
-
-                    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#certificate"
-                        aria-expanded="false" aria-controls="certificate">this certificate</button> -->
 
                     <div class="collapse" id="certificate">
                         <div class="card card-block">
@@ -93,51 +95,52 @@
 
                 <p>
                     <% if @roles.count > 0 %>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#jobHistory"
+                    <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#jobHistory"
                         aria-expanded="false" aria-controls="jobHistory">Work History and roles</button>
                     <% end %>
                     <% if @qualificaitons.count > 0 %>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#qualifications"
+                    <button class="btn btn-success collapsed" type="button" data-toggle="collapse" data-target="#qualifications"
                         aria-expanded="false" aria-controls="qualifications">Qualifications</button>
                     <% end %>
                 </p>
-                <div class="collapse" id="jobHistory">
-                    <% @roles.each do |role| %>
-                    <div class="card card-block role-card">
-                        <h5>
-                            <%= role.organisation %>
-                        </h5>
-                        <h6>
-                            <%= role.roles %>
-                        </h6>
-                        <p>From:
-                            <%= role.from.year %>. To:
-                            <%= role.current? ? 'current': "#{role.to.year}" %>.
-                            <%#=role.to? role.to.year : 'current' %>
-                        </p>
-                        <p>
-                            <%=role.description %>
-                        </p>
-                    </div>
-                    <% end %>
-                </div>
-                <div class="collapse" id="qualifications">
-                    <% @qualificaitons.each do |qual| %>
-                    <div class="card card-block qualification-card">
-                        <h5>
-                            <%= qual.title %>
-                            <%= "(#{qual.year_obtained})"%>
-                        </h5>
-                        <h6>
-                            <%= qual.institution %>
-                        </h6>
-                        <p>
-                            <%=qual.description %>
-                        </p>
-                    </div>
-                    <% end %>
 
-
+                <div id="accordion">
+                    <div class="collapse" id="jobHistory" data-parent="#accordion">
+                        <% @roles.each do |role| %>
+                        <div class="card card-block role-card">
+                            <h5>
+                                <%= role.organisation %>
+                            </h5>
+                            <h6>
+                                <%= role.roles %>
+                            </h6>
+                            <p>From:
+                                <%= role.from.year %>. To:
+                                <%= role.current? ? 'current': "#{role.to.year}" %>.
+                                <%#=role.to? role.to.year : 'current' %>
+                            </p>
+                            <p>
+                                <%=role.description %>
+                            </p>
+                        </div>
+                        <% end %>
+                    </div>
+                    <div class="collapse" id="qualifications" data-parent="#accordion">
+                        <% @qualificaitons.each do |qual| %>
+                        <div class="card card-block qualification-card">
+                            <h5>
+                                <%= qual.title %>
+                                <%= "(#{qual.year_obtained})"%>
+                            </h5>
+                            <h6>
+                                <%= qual.institution %>
+                            </h6>
+                            <p>
+                                <%=qual.description %>
+                            </p>
+                        </div>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         </div>

@@ -20,4 +20,8 @@ class PagesController < ApplicationController
   def tech_news
     @tweets = SocialTool.twitter_search "#rubyonrails -rt"
   end
+
+  def course_completion
+    @page_title = 'Peter Torr Smith - Graduation Udemy Rails 5 Professional'
+  end 
 end

@@ -56,6 +56,26 @@
                     more appropriate
                     style and
                     focus required of a modern useful online service</p>
+                <p>As part of that journey, I've worked by way through a fantasic and challenging
+                    <%= link_to 'Rails 5 Professional Udemy course', 'https://www.udemy.com/professional-rails-5-development-course/', target: '_blank' %>.
+                    Very detailed, and the result of my efforts was the foundations of this website, and
+                    <%#= link_to 'a certificate', course_completion_path %> ;-)
+                    <%#= link_to 'this certificate', '#',  data-toggle: "collapse", data-target: "#certificate" %>
+                    <a class="" data-toggle="collapse" href="#certificate" aria-expanded="false" aria-controls="certificate">
+                        this certificate
+                    </a>
+
+                    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#certificate"
+                        aria-expanded="false" aria-controls="certificate">this certificate</button> -->
+
+                    <div class="collapse" id="certificate">
+                        <div class="card card-block">
+                            <%= link_to (image_tag 'UdemyDissectingRails5_CompletionCertificate.jpg', width: '100%', alt: "Certificate for Completing Udemy Dissecting Rails 5 Professional course", title: "Certificate for Completing Udemy Dissecting Rails 5 Professional course"), course_completion_path %>
+                            <%#= image_tag 'UdemyDissectingRails5_CompletionCertificate.jpg', width: '100%', alt: "Certificate for Completing Udemy Dissecting Rails 5 Professional course", title: "Certificate for Completing Udemy Dissecting Rails 5 Professional course" %>
+                        </div>
+                    </div>
+
+                </p>
                 <p>I love business, technology, governance, finance, food and fermentation, swimming, art, living in
                     Aro
                     Valley, my friends, and

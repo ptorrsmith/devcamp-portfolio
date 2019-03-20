@@ -12,15 +12,24 @@
 
         <div class="card-body">
             <p class="card-text">
-                <span>
+                <h2>
                     <%#= link_to "{#{portfolio_thing.id}} [#{portfolio_thing.position || '--'}] ".html_safe + portfolio_thing.title, portfolio_item_show_path(portfolio_thing)%>
                     <%= link_to portfolio_thing.title, portfolio_thing%>
-                </span>
-                <%=portfolio_thing.subtitle%>
+                </h2>
             </p>
+            <h5>
+                <%=portfolio_thing.subtitle%>
+            </h5>
             <p>
                 <%=portfolio_thing.body.truncate_words(15) %>
             </p>
+            <h6>
+                <% techs = [] %>
+                <% portfolio_thing.technologies.each do | tech | %>
+                <% techs.push(tech.name) %>
+                <% end %>
+                <%= techs.join(', ') %>
+            </h6>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                     <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->

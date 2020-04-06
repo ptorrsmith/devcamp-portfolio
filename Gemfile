@@ -49,7 +49,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # GEMS installed by PTS during build course
 gem 'friendly_id', '~> 5.2.4'
 
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7'
 
 # required for bootstrap gem
 # but already installed via rails gem dependency (see Gemfile.lock)

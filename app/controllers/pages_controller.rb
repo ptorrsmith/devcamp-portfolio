@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   def about
     @page_title = 'Peter Torr Smith - about'
-    @skills = Skill.where('skill_level > 0')
+    @skills = Skill.where('skill_level > 0').order('skill_level DESC')
     @roles = Role.order('roles.from DESC')
     @qualificaitons = Qualification.order('year_obtained DESC')
   end
@@ -23,5 +23,5 @@ class PagesController < ApplicationController
 
   def course_completion
     @page_title = 'Peter Torr Smith - Graduation Udemy Rails 5 Professional'
-  end 
+  end
 end

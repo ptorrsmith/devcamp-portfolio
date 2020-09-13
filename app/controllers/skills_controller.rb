@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
 
   # GET /skills
   def index
-    if ENV['SKILL_SORT_ORDER'] == 'SORT_ORDER' # 'SKILL_LEVEL'
+    if ENV['SKILL_SORT_BY'] == 'SORT_ORDER' # 'SKILL_LEVEL'
       @skills = Skill.all.order('sort_order, skill_level DESC')
     else
       @skills = Skill.all.order('skill_level DESC, sort_order ASC')

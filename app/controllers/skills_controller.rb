@@ -4,8 +4,8 @@ class SkillsController < ApplicationController
 
   # GET /skills
   def index
-    @skills = Skill.all.order('skill_level DESC, sort_order ASC')
-    # @skills = Skill.all.order('sort_order, skill_level DESC')
+    # @skills = Skill.all.order('skill_level DESC, sort_order ASC')
+    @skills = Skill.all.order('sort_order, skill_level DESC')
   end
 
   # GET /skills/1

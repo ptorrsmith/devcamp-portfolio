@@ -8,7 +8,8 @@ class PagesController < ApplicationController
 
   def about
     @page_title = 'Peter Torr Smith - about'
-    @skills = Skill.where('skill_level > 0').order('skill_level DESC')
+    # @skills = Skill.where('skill_level > 0').order('skill_level DESC')
+    @skills = Skill.where('skill_level > 0').order('sort_order, skill_level DESC')
     @roles = Role.order('roles.from DESC')
     @qualificaitons = Qualification.order('year_obtained DESC')
   end

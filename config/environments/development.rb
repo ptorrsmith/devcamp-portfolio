@@ -62,4 +62,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # config.action_cable.url = "ws://localhost:3000/cable"
+
+
+  # Allow requests from subdomains like 'www.ptorrsmith.com'
+# and 'blog.ptorrsmith.com'.
+# Rails.application.config.hosts << '.ptorrsmith.com'
+config.hosts << '.ptorrsmith.com' # required from Rails 6 to prevent DNS rebinding attacks
 end

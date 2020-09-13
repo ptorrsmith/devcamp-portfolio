@@ -96,4 +96,7 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = ['https://pts-devcamp-portfolio.herokuapp.com', 'http://pts-devcamp-portfolio.herokuapp.com']
   # define the route for active cable (I think this defaults to cable)
   config.action_cable.url = "wss://pts-devcamp-portfolio.herokuapp.com/cable"
+
+  config.hosts << '.ptorrsmith.com' # required from Rails 6 to prevent DNS rebinding attacks
+
 end

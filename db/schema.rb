@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_021531) do
     t.date "to"
     t.text "roles"
     t.text "description"
-    t.text "highlights"
+    t.text "hightlights"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "current"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_021531) do
     t.datetime "updated_at", null: false
     t.text "badge"
     t.integer "skill_level"
-    t.integer "sort_order", default: 1
+    t.integer "sort_order", default: 99
   end
 
   create_table "technologies", force: :cascade do |t|

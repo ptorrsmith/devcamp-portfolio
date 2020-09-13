@@ -7,7 +7,7 @@ class CreateRoles < ActiveRecord::Migration[5.2]
       t.date :to
       t.text :roles
       t.text :description
-      t.text :highlights
+      t.text :hightlights
 
       t.timestamps
     end

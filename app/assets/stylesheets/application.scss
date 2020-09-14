@@ -229,3 +229,17 @@ body {
   background: rgba(0, 0, 151, 0.2);
   border: 1px solid blue;
 }
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+}
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}

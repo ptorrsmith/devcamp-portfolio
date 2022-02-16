@@ -43,4 +43,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.hosts << '.ptorrsmith.com' # required from Rails 6 to prevent DNS rebinding attacks
+
 end

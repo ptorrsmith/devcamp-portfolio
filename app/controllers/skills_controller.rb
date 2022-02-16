@@ -4,7 +4,11 @@ class SkillsController < ApplicationController
 
   # GET /skills
   def index
-    @skills = Skill.all.order('skill_level DESC')
+    if ENV['SKILL_SORT_BY'] == 'SORT_ORDER' # 'SKILL_LEVEL'
+      @skills = Skill.all.order('sort_order, skill_level DESC')
+    else
+      @skills = Skill.all.order('skill_level DESC, sort_order ASC')
+    end
   end
 
   # GET /skills/1
@@ -34,7 +38,8 @@ class SkillsController < ApplicationController
   # PATCH/PUT /skills/1
   def update
     if @skill.update(skill_params)
-      redirect_to @skill, notice: 'Skill was successfully updated.'
+      # redirect_to @skill, notice: 'Skill was successfully updated.'
+      redirect_to skills_path, notice: "Skill '#{@skill.title}' (#{@skill.id}) was successfully updated."
     else
       render :edit
     end
@@ -54,6 +59,6 @@ class SkillsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def skill_params
-      params.require(:skill).permit(:title, :percent_utilized, :skill_level)
+      params.require(:skill).permit(:title, :percent_utilized, :skill_level, :sort_order)
     end
 end

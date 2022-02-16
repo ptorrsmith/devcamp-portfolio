@@ -3,9 +3,8 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h3>Office Address</h3>
-        <p>73 Aro St <br />
-            Aro Village <br />
+        <h3>Location:</h3>
+        <p> Aro Village <br />
             Aro Valley<br />
             Wellington, 6021</p>
 
@@ -21,9 +20,12 @@
 
     </div>
 
-    <div class="col-md-8">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d374.7030311965602!2d174.76698827548046!3d-41.29528157714839!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38b0242e3b17ef%3A0xd43fea97cdb6718e!2s73+Aro+St%2C+Aro+Valley%2C+Wellington+6021!5e0!3m2!1sen!2snz!4v1549771748872"
+    <div class="col-md-8 google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d743.9021437828025!2d174.76739847370683!3d-41.29539361506966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snz!4v1600116387315!5m2!1sen!2snz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <% if 1 == 2 %>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d374.7030311965602!2d174.76698827548046!3d-41.29528157714839!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38b0242e3b17ef%3A0xd43fea97cdb6718e!2s73+Aro+St%2C+Aro+Valley%2C+Wellington+6021!5e0!3m2!1sen!2snz!4v1549771748872"
             width="500" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <% end %>
     </div>
 
 </div>
@@ -39,7 +41,7 @@
 
 
 
-<!-- 
+<!--
 <p><%#= number_to_currency 45.55 %>
 <p><%#= number_to_currency "3345342.53234" %>
 

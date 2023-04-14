@@ -1,0 +1,51 @@
+<p class='text-center'>
+    <% if @roles.count > 0 %>
+    <button class="btn btn-primary collapsed shadow mb-2" type="button" data-toggle="collapse" data-target="#jobHistory"
+        aria-expanded="false" aria-controls="jobHistory">Work History and roles</button>
+    <% end %>
+    <% if @qualificaitons.count > 0 %>
+    <button class="btn btn-success collapsed shadow mb-2" type="button" data-toggle="collapse" data-target="#qualifications"
+        aria-expanded="false" aria-controls="qualifications">Qualifications</button>
+    <% end %>
+    <%= link_to (fa_icon "external-link-square", text: "Download Profile/CV", right: true), '/docs/Peter Torr Smith - Profile - April 2023.pdf', target: '_blank', class: 'btn btn-info text-white shadow mb-2' %>
+
+</p>
+
+<div id="accordion">
+    <div class="collapse" id="jobHistory" data-parent="#accordion">
+        <% @roles.each do |role| %>
+        <div class="card card-block role-card">
+            <h5>
+                <%= role.organisation %>
+            </h5>
+            <h6>
+                <%= role.roles %>
+            </h6>
+            <p>From:
+                <%= role.from.year %>. To:
+                <%= role.current? ? 'current': "#{role.to.year}" %>.
+                <%#=role.to? role.to.year : 'current' %>
+            </p>
+            <p>
+                <%=role.description %>
+            </p>
+        </div>
+        <% end %>
+    </div>
+    <div class="collapse" id="qualifications" data-parent="#accordion">
+        <% @qualificaitons.each do |qual| %>
+        <div class="card card-block qualification-card">
+            <h5>
+                <%= qual.title %>
+                <%= "(#{qual.year_obtained})"%>
+            </h5>
+            <h6>
+                <%= qual.institution %>
+            </h6>
+            <p>
+                <%=qual.description %>
+            </p>
+        </div>
+        <% end %>
+    </div>
+</div>

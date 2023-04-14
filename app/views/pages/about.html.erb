@@ -31,6 +31,8 @@
 
                 <p>I've been living in Wellington since 1993 and for much of that time have worked in IT delivery for private-sector, Government and start-up businesses in technical, analytical and team management roles. </p>
 
+                <%= render partial: 'shared/roles_quals_cv' %>
+
                 <p>Currently I'm a senior engineer with <%= link_to 'AskYourTeam', 'https://askyourteam.com/', target: "_blank" %> in their Wellington team enhancing their Ruby on Rails and React enterprise survey platform. This is hosted with AWS and fully managed with Cloud Formation templates. I have lead several new features including implementing a full organisation hiearchy/structure management facility and pair-building the automation of user permissions automatically derived from this structure.  I have implemented, and migrated, many aspects of the application functionality to asynchronous / background job processing, initially using <%= link_to 'Delayed Job', 'https://github.com/collectiveidea/delayed_job', target: "_blank" %>, but recently we migrated everying over to <%= link_to 'Good Job', 'https://github.com/bensheldon/good_job', target: "_blank" %>.  Most recently I have lead the design and implementation of a number of integrations with Hubspot using their Private Apps APIs so the sales and customer support team were alway up to date with what our customers (accounts and users) are doing with the platform.</p>
 
                 <p>Prior to that I was contracting to <%= link_to 'Culture Amp', 'https://cultureamp.com/', target: "_blank" %> as a senior engineer for their 'Performance' product.  For much of this I was primarily focused on back-end performance and enhancements: APIs, DB query optimization, asynchronous job processing, and code restructuring to support domain isolation, laying the foundations for extracting domains out from the Ruby on Rails monolith.</p>
@@ -60,58 +62,6 @@
 
                 <p>I enjoy business, technology, governance, finance & economics, food and fermentation, swimming, yoga, art, living in Aro Valley, my friends and family</p>
                 <p>I love helping others learn new things, as well as digging in and helping make a product, business, team, technology or process work.</p>
-
-                <p class='text-center'>
-                    <% if @roles.count > 0 %>
-                    <button class="btn btn-primary collapsed shadow mb-2" type="button" data-toggle="collapse" data-target="#jobHistory"
-                        aria-expanded="false" aria-controls="jobHistory">Work History and roles</button>
-                    <% end %>
-                    <% if @qualificaitons.count > 0 %>
-                    <button class="btn btn-success collapsed shadow mb-2" type="button" data-toggle="collapse" data-target="#qualifications"
-                        aria-expanded="false" aria-controls="qualifications">Qualifications</button>
-                    <% end %>
-                    <%= link_to (fa_icon "external-link-square", text: "Download Profile/CV", right: true), '/docs/Peter Torr Smith - Profile - April 2023.pdf', target: '_blank', class: 'btn btn-info text-white shadow mb-2' %>
-
-                </p>
-
-                <div id="accordion">
-                    <div class="collapse" id="jobHistory" data-parent="#accordion">
-                        <% @roles.each do |role| %>
-                        <div class="card card-block role-card">
-                            <h5>
-                                <%= role.organisation %>
-                            </h5>
-                            <h6>
-                                <%= role.roles %>
-                            </h6>
-                            <p>From:
-                                <%= role.from.year %>. To:
-                                <%= role.current? ? 'current': "#{role.to.year}" %>.
-                                <%#=role.to? role.to.year : 'current' %>
-                            </p>
-                            <p>
-                                <%=role.description %>
-                            </p>
-                        </div>
-                        <% end %>
-                    </div>
-                    <div class="collapse" id="qualifications" data-parent="#accordion">
-                        <% @qualificaitons.each do |qual| %>
-                        <div class="card card-block qualification-card">
-                            <h5>
-                                <%= qual.title %>
-                                <%= "(#{qual.year_obtained})"%>
-                            </h5>
-                            <h6>
-                                <%= qual.institution %>
-                            </h6>
-                            <p>
-                                <%=qual.description %>
-                            </p>
-                        </div>
-                        <% end %>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

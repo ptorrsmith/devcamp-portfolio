@@ -36,7 +36,7 @@ LINK
             session.delete(:source) # because it get's very annoying to see the banner all the time.  Could've persisted this to a db as well.
             content_tag(:div, greeting.html_safe, class: styles)
         end
-    end 
+    end
 
     def copyright_generator
         PtsDevcampViewTool::Renderer.copyright 'Peter Torr Smith', 'Have a great day :-)'
@@ -86,10 +86,10 @@ LINK
                 title: 'Contact',
                 path: contact_path
             },
-            {
-                title: 'Rails News',
-                path: tech_news_path
-            },
+            # {
+            #     title: 'Rails News',
+            #     path: tech_news_path
+            # },
             {
                 title: 'Portfolio',
                 path: portfolio_items_path
@@ -98,7 +98,7 @@ LINK
                 title: 'Blogs',
                 path: blogs_path
             },
-            
+
         ]
     end
 
@@ -112,11 +112,11 @@ LINK
         nav.html_safe
     end
 
-    
+
     def nav_link_active? path
-        
+
         # binding.pry
-        
+
         "active" if current_page? path
     end
 
@@ -126,7 +126,7 @@ LINK
         # <<NAV   NAV are like giant double quotes
         # so string interpolation and normal double quotes are allowed
         # Contents must be butted to very left
-nav = <<NAV        
+nav = <<NAV
 <#{tag_type}><a href="#{root_path}" class="#{style} #{nav_link_active? root_path}">Home</a></#{tag_type}>
 <#{tag_type}><a href="#{about_me_path}" class="#{style} #{nav_link_active? about_me_path}">About</a></#{tag_type}>
 <#{tag_type}><a href="#{contact_path}" class="#{style} #{nav_link_active? contact_path}">Contact</a></#{tag_type}>
@@ -135,7 +135,7 @@ nav = <<NAV
 NAV
 
         nav.html_safe
-    end    
+    end
 
 
 

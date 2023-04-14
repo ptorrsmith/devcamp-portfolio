@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "DevcampPortfolio_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  
+
   config.action_mailer.default_url_options = { :host => 'ptorrsmith.com' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -100,5 +100,5 @@ Rails.application.configure do
   config.action_cable.url = "wss://pts-devcamp-portfolio.herokuapp.com/cable"
 
   config.hosts << '.ptorrsmith.com' # required from Rails 6 to prevent DNS rebinding attacks
-
+  config.hosts << "pts-devcamp-portfolio.herokuapp.com"
 end

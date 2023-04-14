@@ -90,15 +90,14 @@ LINK
             #     title: 'Rails News',
             #     path: tech_news_path
             # },
-            {
-                title: 'Portfolio',
-                path: portfolio_items_path
-            },
-            {
-                title: 'Blogs',
-                path: blogs_path
-            },
-
+            # {
+            #     title: 'Portfolio',
+            #     path: portfolio_items_path
+            # },
+            # {
+            #     title: 'Blogs',
+            #     path: blogs_path
+            # },
         ]
     end
 

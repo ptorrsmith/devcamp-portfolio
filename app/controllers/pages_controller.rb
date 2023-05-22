@@ -7,12 +7,12 @@ class PagesController < ApplicationController
   end
 
   def about
-    @page_title = 'Peter Torr Smith - about'
+    @page_title = 'Peter Torr Smith - About, Skills, Experience, Qualification, CV'
     # @skills = Skill.where('skill_level > 0').order('skill_level DESC')
     if ENV['SKILL_SORT_BY'] == 'SORT_ORDER' # else 'SKILL_LEVEL'
-      @skills = Skill.where('skill_level > 0').order('sort_order, skill_level DESC')
+      @skills = Skill.where('skill_level > 0').order('sort_order, skill_level DESC, title')
     else
-      @skills = Skill.where('skill_level > 0').order('skill_level DESC, sort_order')
+      @skills = Skill.where('skill_level > 0').order('skill_level DESC, sort_order, title')
     end
     # @skills = Skill.where('skill_level > 0').order('skill_level DESC, sort_order')
     @roles = Role.order('roles.from DESC')

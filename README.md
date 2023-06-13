@@ -1,4 +1,4 @@
-# Pete's DevCamp Portfolio on Rails 5
+# Pete's DevCamp Portfolio on Rails 6
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -12,7 +12,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
+`sudo systemctl start postgresql`
 * Database initialization
 
 * How to run the test suite

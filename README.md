@@ -11,8 +11,8 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
-`sudo systemctl start postgresql`
+* Postgres database start
+`sudo systemctl start postgresql` or `sudo systemctl restart postgresql.service`
 * Database initialization
 
 * How to run the test suite
@@ -20,5 +20,5 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
+`git push heroku master`
 * ...

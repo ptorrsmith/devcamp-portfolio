@@ -2,7 +2,7 @@
     <div class="card">
 
         <h1>About Me</h1>
-        <h2>Product Owner, Analyst, Delivery Lead, Engineer</h2>
+        <h2>Senior Software Engineer, Technical Team Lead, Analyst, Delivery Lead</h2>
         <hr>
 
         <div class="row">
@@ -30,13 +30,26 @@
             </div>
             <div class="col-md-8">
                 <p>I've been living in Wellington since 1993 and for much of that time have worked in IT delivery for private-sector, Government and start-up businesses in technical, analytical, product and team management and delivery roles. </p>
-                <p>I now spend time between Auckland and Wellington, and have been enjoying remote working and the challenges and opportunities that presents.</p>
+                <p>I now spend time between Wellington and Auckland, and have been enjoying remote working and the challenges and opportunities that presents.</p>
 
                 <%= render partial: 'shared/roles_quals_cv' %>
 
-                <p>I've recently completed 19 months contracting fully remote as a senior product engineer for Flux Federation working on their enterprise electricity and gas billing platform.</p>
-                <p>Much of my work there has been involved in designing and implementing new APIs for external and internal consumption. This was to progress the platform to support new Open Data regulations in the Australian market, and to start extracting services out from the core Ruby on Rails monolith. </p>
-                <p>Some highlights have been:
+                <p> Currently I'm the technical team lead at JAVLN for a team of engineers + QA, channeling both new features and support issues from Product and Support, triaging and prioritising these, and working with the team to deliver these in a timely manner.</p>
+                <p>I coordinate sprints for features and improvements, P1 and P2 issue diagnosis and resolution, and scheduled, automated and manual releases throut UAT and production.</p>
+
+                <p>Some highlights from JAVLN:
+                    <ul>
+                        <li>Improving the work flow from identification, diagnosis, fix, testing and release</li>
+                        <li>Improving the quality and clarity of work items and acceptance criteria, and the quality and throughput of the work delivered</li>
+                        <li>Implementing Open Telemetry (OTEL LGTM stack) for tracing and metrics (to Cloudwatch and Grafana)</li>
+                        <li>Several rounds of performance improvements and optimisations, including database query optimisation (N+1s mostly), caching, and code refactoring</li>
+                    </ul>
+                </p>
+
+                <p>2023 - 2025 I completed a 19 month contract working fully remote as a Senior Product Engineer for Flux Federation (Meridian) working on their enterprise electricity and gas billing platform.</p>
+                <p>Much of my work there involved designing and implementing new APIs (using Open API) for external and internal consumption. This was to progress the platform to support new Open Data regulations in the Australian market (coming to NZ soon), and to start extracting services out from the core Ruby on Rails monolith. </p>
+
+                <p>Some highlights from Flux Federation:
                     <ul>
                         <li> Supporting the product owners and manager to refine, design and deliver new capabilities</li>
                         <li> Implementing new features and enhancements to the core customer billing platform</li>
@@ -47,15 +60,13 @@
                             <li> API extensions for the mobile app</li>
                         </ul>
                         <li> Working closely with external teams and stakeholders to support their adoption of these new APIs</li>
-                        <li> Using PlantUML to document the current and future state for new services and application refactoring </li>
                         <li> Using OpenAPI to define the APIs, code generation from this to create common reusable classes for the development teams</li>
-                        <li> UI and application flow and messaging enhancements to support new features and improve the user experience</li>
-                        <li> Analysing performance issues in core code and background jobs, and implementing solutions to address these</li>
-                        <li> System financial data audits and fixes</li>
+                        <li> Performance optimizations of core code and background jobs</li>
+                        <li> System financial data audits, integrity checks and fixes</li>
                     </ul>
                 </p>
 
-                <p>Prior to that I had a wonderful year as a senior engineer with <%= link_to 'AskYourTeam', 'https://askyourteam.com/', target: "_blank" %> in their Wellington team enhancing their Ruby on Rails and React enterprise survey platform. This is hosted with AWS and fully managed with Cloud Formation templates. I led several new features including implementing a full organisation hiearchy/structure management facility using and extending the <%= link_to 'Ancestry gem', 'https://github.com/stefankroes/ancestry', target: "_blank" %>, and pair-building the automation of user permissions automatically derived from this structure.  I have implemented, and migrated, many aspects of the application functionality to asynchronous / background job processing, initially using <%= link_to 'Delayed Job', 'https://github.com/collectiveidea/delayed_job', target: "_blank" %>, but recently we migrated everying over to <%= link_to 'Good Job', 'https://github.com/bensheldon/good_job', target: "_blank" %>.  I also led the design and implementation of a number of integrations with Hubspot using their Private Apps APIs so the sales and customer support team were alway up to date with what our customers (accounts and users) are doing with the platform.</p>
+                <p>2022 - 2023 I had a wonderful year as a senior engineer with <%= link_to 'AskYourTeam', 'https://askyourteam.com/', target: "_blank" %> in their Wellington team enhancing their Ruby on Rails and React enterprise survey platform. I led several new features including implementing a full organisation hiearchy/structure management facility using and extending the <%= link_to 'Ancestry gem', 'https://github.com/stefankroes/ancestry', target: "_blank" %>, and automating of user permissions automatically derived from this structure.  I also migrated many aspects of the application functionality to asynchronous / background job processing, initially using <%= link_to 'Delayed Job', 'https://github.com/collectiveidea/delayed_job', target: "_blank" %>, but then using <%= link_to 'Good Job', 'https://github.com/bensheldon/good_job', target: "_blank" %>.  I also led the design and implementation of a number of integrations with Hubspot using their Private Apps APIs so the sales and customer support team were alway up to date with what our customers (accounts and users) are doing with the platform.</p>
 
                 <div class="row">
                     <div class="col-md-7">
@@ -72,11 +83,11 @@
 
                 </div>
 
-                <p>Prior to AskYourTeam, I was contracting fully remote to <%= link_to 'Culture Amp', 'https://cultureamp.com/', target: "_blank" %> as a senior engineer for their 'Performance' product.  For much of this I was primarily focused on back-end performance and enhancements: APIs, DB query optimization, asynchronous job processing, and code restructuring to support domain isolation, laying the foundations for extracting domains out from the Ruby on Rails monolith.</p>
+                <p>2021 - 2022, I contracted fully remote to <%= link_to 'Culture Amp', 'https://cultureamp.com/', target: "_blank" %> as a Senior Engineer for their 'Performance' product.  For much of this I was primarily focused on back-end performance and enhancements: APIs, DB query optimization, asynchronous job processing, and code restructuring to support domain isolation, laying the foundations for extracting domains out from the Ruby on Rails monolith.</p>
 
                 <p>In late 2020 I had the privilege of doing a short contract with the <a href="https://resn.co.nz" target="_blank">Resn Digital</a> team as one of their Technical Directors. Here I've helped scope out and investigate technical approaches for a number of digital projects in the pipeline, and to help make the <a href="https://goodmeat.co" target="_blank">GOOD Meat launch experience</a> a reality :-) (the site experience we made is no longer publically available as it was only for their initial launch)</p>
 
-                <p>2019/2020 I did a number of upgrades for <a href="http://www.hirethings.com" target="_blank">HireThings.com / .co.nz / com.au</a> towards a more appropriate style and focus required of a modern useful online service. This included upgrading from Ruby on Rails 2 to 5, re-architecting the application and shifting onto Amazon Web Services, enabling continuous deployments, and giving the service a full mobile-first refresh based on the Bootstrap framework. I've also mentored a couple of younger developers during that journey.</p>
+                <p>2019 - 2020 I did a number of major upgrades for <a href="http://www.hirethings.com" target="_blank">HireThings.com / .co.nz / com.au</a> towards a more appropriate style and focus required of a modern useful online service. This included upgrading from Ruby on Rails 2 to 5 (since upgraded to 7.2), re-architecting the application and shifting onto Amazon Web Services, enabling continuous deployments, and giving the service a full mobile-first refresh based on the Bootstrap framework. I've also mentored a couple of younger developers during that journey.</p>
 
                 <p>2011 - 2018 I worked with the Ministry of Social Development on IT business projects & programmes for a wide range of business services and applications. These have been mainly web applications and the shift to mobile-first web.</p>
 
@@ -101,11 +112,15 @@
                 <p>I love helping others learn new things, as well as digging in and helping make a product, business, team, technology or process work.</p>
             </div>
             <div>
-                <h2>Recent Git activity</h2>
+                <h2>Git activity</h2>
                 <h4>commits, pull/merge requests, code reviews and approvals</h4>
+                <p>Github 2019-2023 (HireThings, Culture Amp, AskYourTeam), Gitlab (Flux) 2023-2024. BitBucket (JAVLN) has no equivalent chart</p>
+
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Github 2021-2023</h5>
+                        <h5 class="card-title">Github 2019-2023</h5>
+                        <%= image_tag 'github2019.png', width: '100%', alt: "Github commits 2019 - Culture Amp", title: "Github commits 2019 - Culture Amp" %>
+                        <%= image_tag 'github2020.png', width: '100%', alt: "Github commits 2020 - Culture Amp", title: "Github commits 2020 - Culture Amp" %>
                         <%= image_tag 'github2021.png', width: '100%', alt: "Github commits 2021 - Culture Amp", title: "Github commits 2021 - Culture Amp" %>
                         <%= image_tag 'github2022.png', width: '100%', alt: "Github commits 2022 - Culture Amp, AskYourTeam", title: "Github commits 2022 - Culture Amp, AskYourTeam" %>
                         <%= image_tag 'github2023.png', width: '100%', alt: "Github commits 2023 - AskYourTeam", title: "Github commits 2023 - AskYourTeam" %>

@@ -34,6 +34,7 @@
 
                 <%= render partial: 'shared/roles_quals_cv' %>
 
+                <h5>JAVLN - Insurance</h5>
                 <p> Currently I'm the technical team lead at JAVLN for a team of engineers + QA, channeling both new features and support issues from Product and Support, triaging and prioritising these, and working with the team to deliver these in a timely manner.</p>
                 <p>I coordinate sprints for features and improvements, P1 and P2 issue diagnosis and resolution, and scheduled, automated and manual releases throut UAT and production.</p>
 
@@ -46,7 +47,8 @@
                     </ul>
                 </p>
 
-                <p>2023 - 2025 I completed a 19 month contract working fully remote as a Senior Product Engineer for Flux Federation (Meridian) working on their enterprise electricity and gas billing platform.</p>
+                <h5>Flux Federation (Meridian) - Electricity and Gas</h5>
+                <p>2023 - 2025 I completed a 19 month contract working fully remote as a Senior Product Engineer for Flux Federation working on their enterprise electricity and gas billing platform.</p>
                 <p>Much of my work there involved designing and implementing new APIs (using Open API) for external and internal consumption. This was to progress the platform to support new Open Data regulations in the Australian market (coming to NZ soon), and to start extracting services out from the core Ruby on Rails monolith. </p>
 
                 <p>Some highlights from Flux Federation:
@@ -66,6 +68,7 @@
                     </ul>
                 </p>
 
+                <h5>AskYourTeam - Enterprise Survey Platform</h5>
                 <p>2022 - 2023 I had a wonderful year as a senior engineer with <%= link_to 'AskYourTeam', 'https://askyourteam.com/', target: "_blank" %> in their Wellington team enhancing their Ruby on Rails and React enterprise survey platform. I led several new features including implementing a full organisation hiearchy/structure management facility using and extending the <%= link_to 'Ancestry gem', 'https://github.com/stefankroes/ancestry', target: "_blank" %>, and automating of user permissions automatically derived from this structure.  I also migrated many aspects of the application functionality to asynchronous / background job processing, initially using <%= link_to 'Delayed Job', 'https://github.com/collectiveidea/delayed_job', target: "_blank" %>, but then using <%= link_to 'Good Job', 'https://github.com/bensheldon/good_job', target: "_blank" %>.  I also led the design and implementation of a number of integrations with Hubspot using their Private Apps APIs so the sales and customer support team were alway up to date with what our customers (accounts and users) are doing with the platform.</p>
 
                 <div class="row">
@@ -83,23 +86,19 @@
 
                 </div>
 
+                <h5>Culture Amp - Employee Experience Platform</h5>
                 <p>2021 - 2022, I contracted fully remote to <%= link_to 'Culture Amp', 'https://cultureamp.com/', target: "_blank" %> as a Senior Engineer for their 'Performance' product.  For much of this I was primarily focused on back-end performance and enhancements: APIs, DB query optimization, asynchronous job processing, and code restructuring to support domain isolation, laying the foundations for extracting domains out from the Ruby on Rails monolith.</p>
 
+                <h5>RESN - Digital Agency</h5>
                 <p>In late 2020 I had the privilege of doing a short contract with the <a href="https://resn.co.nz" target="_blank">Resn Digital</a> team as one of their Technical Directors. Here I've helped scope out and investigate technical approaches for a number of digital projects in the pipeline, and to help make the <a href="https://goodmeat.co" target="_blank">GOOD Meat launch experience</a> a reality :-) (the site experience we made is no longer publically available as it was only for their initial launch)</p>
 
+                <h5>HireThings - Online Hire and Rental Marketplace</h5>
                 <p>2019 - 2020 I did a number of major upgrades for <a href="http://www.hirethings.com" target="_blank">HireThings.com / .co.nz / com.au</a> towards a more appropriate style and focus required of a modern useful online service. This included upgrading from Ruby on Rails 2 to 5 (since upgraded to 7.2), re-architecting the application and shifting onto Amazon Web Services, enabling continuous deployments, and giving the service a full mobile-first refresh based on the Bootstrap framework. I've also mentored a couple of younger developers during that journey.</p>
 
-                <p>2011 - 2018 I worked with the Ministry of Social Development on IT business projects & programmes for a wide range of business services and applications. These have been mainly web applications and the shift to mobile-first web.</p>
-
-                <p>To refresh and modernize my technical skills and prepare for the upgrade work on Hire Things, I did the excellent <%= link_to 'Enspiral Dev Academy Bootcamp', 'https://devacademy.co.nz/', target: "_blank" %> over the last quarter of 2018. Here with a great bunch of students and coaches we were immersed in a world of Javascript, frameworks, modern web app development with React, and team challenges. The EDA <%= link_to 'Graduation Letter', '/docs/Graduation certificate for Peter Torr Smith.pdf', target: "_blank" %> covers it quite well</p>
+                <h5>Modern Web and Rails Upskilling</h5>
+                <p>In late 2018, to refresh and modernize my technical skills and prepare for the upgrade work on Hire Things, I did the excellent <%= link_to 'Enspiral Dev Academy Bootcamp', 'https://devacademy.co.nz/', target: "_blank" %>. Here with a great bunch of students and coaches we were immersed in a world of Javascript, frameworks, modern web app development with React, and team challenges. The EDA <%= link_to 'Graduation Letter', '/docs/Graduation certificate for Peter Torr Smith.pdf', target: "_blank" %> covers it quite well</p>
 
                 <p>I then spent several weeks <a class="" data-toggle="collapse" href="#certificate" aria-expanded="false" aria-controls="certificate">completing</a> this fantasic and challenging <%= link_to 'Rails Professional Udemy course', 'https://www.udemy.com/professional-rails-5-development-course/', target: '_blank' %>. It was very detailed, a great refresher, and the result of my efforts was this website (hosted on Heroku), <%= link_to 'ptorrsmith.com', 'http://www.ptorrsmith.com' %>, built from scratch with Rails 5 (I've since upgraded this to Rails 6.1 and ruby 3.2).
-                    <%#= link_to 'a certificate', course_completion_path %>
-                    <%#= link_to 'this certificate', '#',  data-toggle: "collapse", data-target: "#certificate" %>
-                    <!-- Collapse can have button or link options. Button uses  data-target="#certificate", whilst link uses  href="#certificate"  -->
-                    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#certificate"
-                        aria-expanded="false" aria-controls="certificate">this certificate</button> -->
-
                     <div class="collapse" id="certificate">
                         <div class="card card-block">
                             <%= link_to (image_tag '/images/UdemyDissectingRails5_CompletionCertificate.jpg', width: '100%', alt: "Certificate for Completing Udemy Dissecting Rails 5 Professional course", title: "Certificate for Completing Udemy Dissecting Rails 5 Professional course"), course_completion_path %>
@@ -107,6 +106,9 @@
                         </div>
                     </div>
                 </p>
+
+                <h5>Ministry of Social Development - Government</h5>
+                <p>2011 - 2018 I worked with the Ministry of Social Development on IT business projects & programmes for a wide range of business services and applications. These have been mainly web applications and the shift to mobile-first web.</p>
 
                 <p>I enjoy business, technology, governance, finance & economics, food and fermentation, swimming, yoga, art, living in Aro Valley, my friends and family</p>
                 <p>I love helping others learn new things, as well as digging in and helping make a product, business, team, technology or process work.</p>
